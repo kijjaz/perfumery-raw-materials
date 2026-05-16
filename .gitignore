@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.zip
+*.log
+
+# Large data and caches
+html_cache/
+20251029 PerfumersWorld scraped HTML/
+20260401 Perfume Supplies _ PerfumersWorld_files/
+pubchem_master_audit_cache.json
+pubchem_smiles_cache.json
+
+# Optional: SQLite databases (keep if you want the data versioned, or ignore if it's generated)
+# perfumery.db

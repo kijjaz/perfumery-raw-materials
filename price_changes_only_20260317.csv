@@ -1,0 +1,302 @@
+Product_ID,Material_Name,CAS_Number,Price_US/g,Notes,Is_Dilution,Active_Material,Solvent,Active_%,Availability,Price_Change
+6WU18875,AGARWOOD F-TEC from PerfumersWorld,Mixture (Perfume Base),1.300,,FALSE,,,,Available,+0.200
+3AD13388,Alcohol C-8 Octanol from PerfumersWorld,111-87-5,0.200,,FALSE,,,,Available,+0.020
+4IN10857,Allyl Ionone Cetone V from PerfumersWorld,79-78-7,1.300,,FALSE,,,,Available,+0.890
+8II00243,Alpha Irone from PerfumersWorld,79-69-6,5.100,,FALSE,,,,Available,+0.120
+3KL00430,Alpha Terpineol from PerfumersWorld,98-55-5,0.150,,FALSE,,,,Available,+0.050
+4WW17035,Amber Core from PerfumersWorld,139504-68-0,0.460,,FALSE,,,,Not Listed,REMOVED
+3WQ11673,Amber Decane from PerfumersWorld,58567-11-6,0.450,,FALSE,,,,Available,+0.010
+6FG08058,Apple Green from PerfumersWorld,Mixture (Perfume Base),0.150,,FALSE,,,,Available,+0.010
+6WQ18085,ARABIAN OUD F-TEC from PerfumersWorld,Mixture (Perfume Base),0.400,,FALSE,,,,Available,+0.050
+6PS18638,BASIL F-TEC from PerfumersWorld,Mixture (Perfume Base),0.380,,FALSE,,,,Available,+0.030
+6QV18435,BENZOIN F-TEC from PerfumersWorld,Mixture (Perfume Base),0.300,,FALSE,,,,Available,+0.050
+2QV00050,Benzoin Siam Resinoid from PerfumersWorld,100-51-6,0.700,,FALSE,,,,Available,+0.100
+5QV07505,Benzoin Siam Resinoid 50% in BB from PerfumersWorld,"9000-72-0|0.5
+120-51-4|0.5",0.400,,TRUE,Benzoin Siam Resinoid from PerfumersWorld,Benzyl Benzoate (BB) from PerfumersWorld,50.00%,Available,+0.050
+5QV13027,Benzoin Siam Resinoid 50% in DPG from PerfumersWorld,"9000-72-0|0.5
+25265-71-8|0.5",0.400,,TRUE,Benzoin Siam Resinoid from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,50.00%,Available,+0.060
+2SQ00056,Benzyl Cinnamate from PerfumersWorld,103-41-3,0.300,,FALSE,,,,Available,+0.050
+5SQ12479,Benzyl Cinnamate 10% in DPG from PerfumersWorld,"103-41-3|0.1
+25265-71-8|0.9",0.100,,TRUE,Benzyl Cinnamate from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,10.00%,Available,+0.040
+7TP00822,Birch Tar Oil Rectified from PerfumersWorld,8001-88-5,2.300,,FALSE,,,,Available,+0.200
+7CA00849,Bitter Orange Essential Oil from PerfumersWorld,2111-75-3,0.500,,FALSE,,,,Available,+0.040
+8FB00063,Blackcurrant Absolute from PerfumersWorld,122-78-1,8.100,,FALSE,,,,Available,+1.000
+7TW00076,Cade Oil Rectified from PerfumersWorld,8013-10-3,0.750,,FALSE,,,,Available,+0.050
+6SC18557,CARDAMON F-TEC from PerfumersWorld,Mixture (Perfume Base),0.600,,FALSE,,,,Available,+0.100
+4GF00226,cis-3 Hexenyl Acetate from PerfumersWorld,3681-71-8,0.800,,FALSE,,,,Available,+0.080
+3UU07513,Civet Art from PerfumersWorld,103-95-7,4.000,,FALSE,,,,Available,+1.300
+5UU07533,Civet Art 10% in DPG from PerfumersWorld,103-95-7,0.450,,TRUE,Civet Art from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,10.00%,Available,+0.180
+6UU18497,CIVET F-TEC from PerfumersWorld,Mixture (Perfume Base),0.550,,FALSE,,,,Available,+0.230
+6UU09106,Civet Fleuressence from PerfumersWorld,Mixture (Perfume Base),0.600,,FALSE,,,,Available,+0.300
+1VT23924,Cocoa CO2 Extract from PerfumersWorld,84649-99-0,1.700,,FALSE,,,,Available,+0.200
+6CL18897,COLOGNE F-TEC from PerfumersWorld,Mixture (Perfume Base),0.220,,FALSE,,,,Available,+0.030
+7HH00895,Davana Essential Oil from PerfumersWorld,100-52-7,5.100,,FALSE,,,,Available,+0.400
+7QC00902,Elemi Essential Oil from PerfumersWorld,5392-40-5,0.500,,FALSE,,,,Available,+0.060
+3LW00187,Farnesol from PerfumersWorld,4602-84-0,1.350,,FALSE,,,,Available,+0.250
+6QK19340,FRANKINCENSE F-TEC from PerfumersWorld,Mixture (Perfume Base),0.490,,FALSE,,,,Available,+0.040
+7GQ00200,Galbanum Essential Oil from PerfumersWorld,55722-59-3,2.650,,FALSE,,,,Available,+0.250
+4DF00164,Gamma Dodecalactone from PerfumersWorld,2305-05-7,0.850,,FALSE,,,,Available,+0.050
+7SC00209,Ginger Essential Oil from PerfumersWorld,106-24-1,0.600,,FALSE,,,,Available,+0.080
+6KG18320,GREEN PINE F-TEC from PerfumersWorld,Mixture (Perfume Base),0.200,,FALSE,,,,Available,+0.010
+7RW00214,Guaiacwood Essential Oil from PerfumersWorld,97-53-0,0.250,,FALSE,,,,Not Listed,REMOVED
+5RW08677,Guaiacwood Essential Oil 10% in DPG from PerfumersWorld,"8016-23-7|0.1
+25265-71-8|0.9",0.120,,TRUE,Guaiacwood Essential Oil from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,10.00%,Not Listed,REMOVED
+5RW07565,Guaiacwood Essential Oil 50% in DPG from PerfumersWorld,"8016-23-7|0.5
+25265-71-8|0.5",0.160,,TRUE,Guaiacwood Essential Oil from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,50.00%,Not Listed,REMOVED
+3RW04286,Guaiyl Acetate from PerfumersWorld,134-28-1,0.950,,FALSE,,,,Available,+0.150
+7WS13096,Guava Leaf Essential Oil from PerfumersWorld,91770-12-6,1.450,,FALSE,,,,Available,+0.150
+3IA06874,Irotyl from PerfumersWorld,2983-37-1,0.600,,FALSE,,,,Available,+0.340
+4CA03618,Isocyclocitral from PerfumersWorld,1335-66-6,0.770,,FALSE,,,,Available,+0.150
+3JF07351,Jasmin Lactone from PerfumersWorld,34686-71-0,5.800,,FALSE,,,,Available,+0.900
+7KH00262,Juniper Berry Essential Oil from PerfumersWorld,106-22-9,2.800,,FALSE,,,,Available,+0.820
+5KH07869,Juniper Berry Essential Oil 10% in DPG from PerfumersWorld,"8002-68-4|0.1
+25265-71-8|0.9",0.350,,TRUE,Juniper Berry Essential Oil from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,10.00%,Available,+0.130
+8UQ08219,Labdanum Absolute from PerfumersWorld,100-52-7,1.200,,FALSE,,,,Available,+0.100
+6HL18238,LAVENDER F-TEC from PerfumersWorld,Mixture (Perfume Base),0.300,,FALSE,,,,Available,+0.020
+7CA00285,Mandarin Essential Oil from PerfumersWorld,41270-80-8,0.500,,FALSE,,,,Available,+0.200
+8HE00557,Mate Absolute from PerfumersWorld,1604-28-0,8.500,,FALSE,,,,Available,+1.100
+3LB00292,Menthyl Acetate from PerfumersWorld,16409-45-3,0.390,,FALSE,,,,Available,+0.070
+4LF00294,Methyl Amyl Ketone from PerfumersWorld,110-43-0,0.300,,FALSE,,,,Available,+0.070
+7QC00314,Myrrh Essential Oil from PerfumersWorld,8016-37-3,3.100,,FALSE,,,,Available,+0.080
+6GW18223,NATURELLE HOMME F-TEC from PerfumersWorld,Mixture (Perfume Base),0.270,,FALSE,,,,Available,+0.050
+7CN00318,Neroli Essential Oil from PerfumersWorld,100-52-7,20.800,,FALSE,,,,Available,+0.080
+5CN07545,Neroli Essential Oil 10% in DPG from PerfumersWorld,"8016-38-4|0.1
+25265-71-8|0.9",2.300,,TRUE,Neroli Essential Oil from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,10.00%,Available,+0.380
+1CN00320,Nerolin Bromelia from PerfumersWorld,93-18-5,0.150,,FALSE,,,,Available,+0.020
+5YH07549,Oakmoss Absolute (IFRA Low Atranol) 10% in DPG from PerfumersWorld,"90028-68-5|0.1
+25265-71-8|0.9",0.380,,TRUE,Oakmoss Absolute (IFRA Low Atranol) from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,10.00%,Available,+0.030
+8YH00328,Oakmoss Absolute (IFRA Low Atranol) from PerfumersWorld,9000-50-4,3.300,,FALSE,,,,Available,+0.240
+7QC00336,Opoponax Essential Oil from PerfumersWorld,93384-32-8,4.400,,FALSE,,,,Available,+1.080
+8NC00338,Orange Flower Absolute from PerfumersWorld,100-52-7,29.900,,FALSE,,,,Available,+0.380
+7WB00357,Patchouli Essential Oil from PerfumersWorld,84238-39-1,0.960,,FALSE,,,,Available,+0.110
+4GN00382,Phenyl Acetaldehyde Dimethyl Acetal (PADMA) from PerfumersWorld,101-48-4,0.250,,FALSE,,,,Available,+0.020
+3XU22379,Romandolide from PerfumersWorld,236391-76-7,0.300,,FALSE,,,,Available,+0.050
+5RM07856,Rose de Mai Absolute 10% in DPG from PerfumersWorld,100-51-6,1.350,,FALSE,,,10.00%,Available,+0.130
+7HB00400,Rosemary Essential Oil from PerfumersWorld,72203-97-5,0.350,,FALSE,,,,Available,+0.030
+7HP00403,Sage Dalmation Essential Oil from PerfumersWorld,546-80-5,0.800,,FALSE,,,,Available,+0.040
+6TW18445,TOBACCO F-TEC from PerfumersWorld,Mixture (Perfume Base),0.370,,FALSE,,,,Available,+0.150
+6TW08328,Tobacco Fleuressence from PerfumersWorld,Mixture (Perfume Base),0.280,,FALSE,,,,Available,+0.040
+8VQ00445,Tonka Bean Absolute from PerfumersWorld,119-84-6,9.020,,FALSE,,,,Not Listed,REMOVED
+8YT00576,Treemoss Absolute from PerfumersWorld,90028-67-4,5.450,,FALSE,,,,Available,+1.530
+5YT08337,Treemoss Absolute 10% in DEP from PerfumersWorld,"90028-67-4|0.1
+84-66-2|0.9",0.580,,TRUE,Treemoss Absolute from PerfumersWorld,Diethyl Phthalate (DEP) from PerfumersWorld,10.00%,Available,+0.240
+5YT08604,Treemoss Absolute 10% in DPG from PerfumersWorld,"90028-67-4|0.1
+25265-71-8|0.9",0.580,,TRUE,Treemoss Absolute from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,10.00%,Available,+0.240
+4XU11429,Velvione from PerfumersWorld,37609-25-9,1.570,,FALSE,,,,Not Listed,REMOVED
+7WY00466,Vetiver Essential Oil from PerfumersWorld,475-20-7,1.550,,FALSE,,,,Available,+0.030
+7OP00947,Wintergreen Essential Oil from PerfumersWorld,68917-75-9,0.600,,FALSE,,,,Available,+0.330
+7NJ00472,Ylang Ylang Essential Oil from PerfumersWorld,106-24-1,0.900,,FALSE,,,,Available,+0.060
+,Deionized Water from PerfumersWorld,7732-18-5,0.000,,FALSE,,,,Not Listed,REMOVED
+,Ethanol 99.9% from PerfumersWorld,64-17-5,0.010,,FALSE,,,,Not Listed,REMOVED
+,DPG,25265-71-8,0.070,,FALSE,,,,Not Listed,REMOVED
+,IPM,110-27-0,0.060,,FALSE,,,,Not Listed,REMOVED
+,TEC,77-93-0,0.050,,FALSE,,,,Not Listed,REMOVED
+,BB,120-51-4,0.200,,FALSE,,,,Not Listed,REMOVED
+8F3094001657,2-Acetyl Pyrazine (Powder) from SimpleScentsDIY,22047-25-2,0.927,,,,,,Not Listed,REMOVED
+8F3094001642,2-Acetyl Pyrazine 1% in DPG from SimpleScentsDIY,,0.371,,TRUE,2-Acetyl Pyrazine (Powder) from SimpleScentsDIY,ไดโพรไพลีน ไกลคอล / Dipropylene Glycol / DPG from SimpleScentsDIY,1.00%,Not Listed,REMOVED
+8F3094001770,Aldehyde C-10 from SimpleScentsDIY,112-31-2,0.185,,,,,,Not Listed,REMOVED
+8F3094001771,Aldehyde C-11 from SimpleScentsDIY,112-45-8,0.185,,,,,,Not Listed,REMOVED
+8F3094001656,Aldehyde C-12 from SimpleScentsDIY,112-54-9,0.247,,,,,,Not Listed,REMOVED
+8F3094005317,Aldehyde C-12 MNA from SimpleScentsDIY,110-41-8,0.155,,,,,,Not Listed,REMOVED
+8F3094001800,Aldehyde C-14 Pure from SimpleScentsDIY,104-67-6,0.124,,,,,,Not Listed,REMOVED
+8F3094001431,Aldehyde C-16 from SimpleScentsDIY,77-83-8,0.155,,,,,,Not Listed,REMOVED
+8F3094001801,Aldehyde C-18 Pure from SimpleScentsDIY,104-67-6,0.124,,,,,,Not Listed,REMOVED
+8F3094001768,Aldehyde C-8 from SimpleScentsDIY,124-13-0,0.165,,,,,,Not Listed,REMOVED
+8F3094001769,Aldehyde C-9 from SimpleScentsDIY,124-19-6,0.185,,,,,,Not Listed,REMOVED
+8F3094001826,Allyl Caproate C6 from SimpleScentsDIY,123-68-2,0.124,,,,,,Not Listed,REMOVED
+8F3094001704,Allyl Heptylate from SimpleScentsDIY,142-19-8,0.103,,,,,,Not Listed,REMOVED
+8F3094001290,Alpha Ionone from SimpleScentsDIY,127-41-3,0.165,,,,,,Not Listed,REMOVED
+8F3094005333,Alpha-Pinene from SimpleScentsDIY,80-56-8,0.124,,,,,,Not Listed,REMOVED
+8F3094001701,Amber Core from SimpleScentsDIY,139504-68-0,0.175,,,,,,Not Listed,REMOVED
+8F3094001890,Ambermax 50% Dowanol TPM from SimpleScentsDIY,929625-08-1,1.082,,,,,,Not Listed,REMOVED
+8F3094001647,Ambermor DL (Cetalox) 10% in DPG from SimpleScentsDIY,,0.371,,,,,,Not Listed,REMOVED
+8F3094001658,Ambermor DL (Semi Solid) from SimpleScentsDIY,3738-00-9,2.318,,,,,,Not Listed,REMOVED
+8F3094004205,Amberwood F from SimpleScentsDIY,58567-11-6,0.185,,,,,,Not Listed,REMOVED
+8F3094001556,Ambrettolide from SimpleScentsDIY,28645-51-4,1.546,,,,,,Not Listed,REMOVED
+8F3094004161,Ambrinol from SimpleScentsDIY,41199-19-3,12.365,,,,,,Not Listed,REMOVED
+8F3094001659,Ambrocenide (Powder) from SimpleScentsDIY,211299-54-6,3.091,,,,,,Not Listed,REMOVED
+8F3094001654,Ambrocenide 10% in DPG from SimpleScentsDIY,,0.495,,TRUE,Ambrocenide (Powder) from SimpleScentsDIY,ไดโพรไพลีน ไกลคอล / Dipropylene Glycol / DPG from SimpleScentsDIY,10.00%,Not Listed,REMOVED
+8F3094001561,Ambroxan (Powder) from SimpleScentsDIY,6790-58-5,2.349,,,,,,Not Listed,REMOVED
+8F3094001558,Ambroxan 10% in DPG from SimpleScentsDIY,,0.495,,TRUE,Ambroxan (Powder) from SimpleScentsDIY,ไดโพรไพลีน ไกลคอล / Dipropylene Glycol / DPG from SimpleScentsDIY,10.00%,Not Listed,REMOVED
+8F3094005337,Anethol from SimpleScentsDIY,4180-23-8,0.185,,,,,,Not Listed,REMOVED
+8F3094004198,Anisaldehyde from SimpleScentsDIY,0123-11-5,0.124,,,,,,Not Listed,REMOVED
+8F3094004207,Aphermate from SimpleScentsDIY,25225-08-05,0.185,,,,,,Not Listed,REMOVED
+8F3094001772,Azarbre from SimpleScentsDIY,68845-36-3,0.618,,,,,,Not Listed,REMOVED
+8F3094001773,Bacdanol from SimpleScentsDIY,28219-61-6,0.165,,,,,,Not Listed,REMOVED
+8F3094001640,Benzaldehyde from SimpleScentsDIY,100-52-7,0.124,,,,,,Not Listed,REMOVED
+8F3094001432,Benzyl Acetate from SimpleScentsDIY,0140-11-4,0.103,,,,,,Not Listed,REMOVED
+8F3094001690,Benzyl Benzoate from SimpleScentsDIY,120-51-4,0.103,,,,,,Not Listed,REMOVED
+8F3094001300,Benzyl Salicylate from SimpleScentsDIY,118-58-1,0.103,,,,,,Not Listed,REMOVED
+8F3094001645,Beta Caryophyllene from SimpleScentsDIY,87-44-5,0.124,,,,,,Not Listed,REMOVED
+8F3094005318,Bourgeonal from SimpleScentsDIY,18127-01-0,0.618,,,,,,Not Listed,REMOVED
+8F3094001559,Calone (Powder) from SimpleScentsDIY,28940-11-6,2.473,,,,,,Not Listed,REMOVED
+8F3094001562,Calone 10% in DPG from SimpleScentsDIY,,0.371,,TRUE,Calone (Powder) from SimpleScentsDIY,ไดโพรไพลีน ไกลคอล / Dipropylene Glycol / DPG from SimpleScentsDIY,10.00%,Not Listed,REMOVED
+8F3094004157,Canthoxal from SimpleScentsDIY,5462-06-06,0.247,,,,,,Not Listed,REMOVED
+8F3094004215,Carbinol Muguet from SimpleScentsDIY,0103-05-09,0.185,,,,,,Not Listed,REMOVED
+8F3094001698,Cashmeran 10% in DPG from SimpleScentsDIY,33704-61-9,0.165,,,,,,Not Listed,REMOVED
+8F3094001551,Cedramber from SimpleScentsDIY,19870-74-7,0.165,,,,,,Not Listed,REMOVED
+8F3094005312,Cedroxyde from SimpleScentsDIY,71735-79-0,0.618,,,,,,Not Listed,REMOVED
+8F3094001833,Cinnamic Aldehyde from SimpleScentsDIY,104-55-2,0.124,,,,,,Not Listed,REMOVED
+8F3094001834,Cinnamyl Acetate from SimpleScentsDIY,103-54-8,0.165,,,,,,Not Listed,REMOVED
+8F3094001819,Cinnamyl Alcohol 50% in DPG from SimpleScentsDIY,104-54-1,0.124,,,,,,Not Listed,REMOVED
+8F3094001560,CIS Jasmone from SimpleScentsDIY,0488-10-8,1.113,,,,,,Not Listed,REMOVED
+8F3094005324,Cis-3-Hexenol from SimpleScentsDIY,928-96-1,0.299,,,,,,Not Listed,REMOVED
+8F3094001830,Cis-3-hexenyl Isobutyrate from SimpleScentsDIY,41519-23-7,1.051,,,,,,Not Listed,REMOVED
+8F3094001284,Citral Nat from SimpleScentsDIY,5392-40-5,0.165,,,,,,Not Listed,REMOVED
+8F3094004197,Citronellal from SimpleScentsDIY,106-23-0,0.155,,,,,,Not Listed,REMOVED
+8F3094001297,Citronello 70 from SimpleScentsDIY,106-22-9,0.165,,,,,,Not Listed,REMOVED
+8F3094004206,Coranol from SimpleScentsDIY,83926-73-2,0.247,,,,,,Not Listed,REMOVED
+8F3094001563,Coumarin (Powder) from SimpleScentsDIY,91-64-5,0.309,,,,,,Not Listed,REMOVED
+8F3094001480,Coumarin 10% in DPG from SimpleScentsDIY,,0.124,,TRUE,Coumarin (Powder) from SimpleScentsDIY,ไดโพรไพลีน ไกลคอล / Dipropylene Glycol / DPG from SimpleScentsDIY,10.00%,Not Listed,REMOVED
+8F3094001644,Cyclamen Aldehyde from SimpleScentsDIY,103-95-7,0.165,,,,,,Not Listed,REMOVED
+8F3094004158,Cyclogalbanate from SimpleScentsDIY,68901-15-5,0.247,,,,,,Not Listed,REMOVED
+8F3094001728,Damascenone from SimpleScentsDIY,23696-85-7,3.709,,,,,,Not Listed,REMOVED
+8F3094001729,Damascone Alpha from SimpleScentsDIY,24720-09-0,0.618,,,,,,Not Listed,REMOVED
+8F3094001730,Damascone Beta from SimpleScentsDIY,23726-91-2,1.298,,,,,,Not Listed,REMOVED
+8F3094001820,Damascone Delta from SimpleScentsDIY,57378-68-4,0.309,,,,,,Not Listed,REMOVED
+8F3094001825,Delta Decalactone from SimpleScentsDIY,705-86-2,0.155,,,,,,Not Listed,REMOVED
+8F3094001550,Diethyl Malonate from SimpleScentsDIY,105-53-3,0.134,,,,,,Not Listed,REMOVED
+8F3094001822,Dihydro Jasmone from SimpleScentsDIY,1128-08-01,0.299,,,,,,Not Listed,REMOVED
+8F3094001289,Dihydromyrcenol from SimpleScentsDIY,18479-58-8,0.165,,,,,,Not Listed,REMOVED
+8F3094001775,Dimetol from SimpleScentsDIY,13254-34-7,0.165,,,,,,Not Listed,REMOVED
+8F3094004204,Diphenyl Oxide from SimpleScentsDIY,101-84-8,0.124,,,,,,Not Listed,REMOVED
+8F3094001794,D-Limonene from SimpleScentsDIY,5989-27-5,0.103,,,,,,Not Listed,REMOVED
+8F3094005316,DMBC Acetate from SimpleScentsDIY,0151-05-03,0.124,,,,,,Not Listed,REMOVED
+8F3094001904,Dynascone from SimpleScentsDIY,56973-85-4,1.236,,,,,,Not Listed,REMOVED
+8F3094004194,Ebanol from SimpleScentsDIY,67801-20-1,0.206,,,,,,Not Listed,REMOVED
+8F3094001483,Ethyl 2-methyl butyrate from SimpleScentsDIY,7452-79-1,0.165,,,,,,Not Listed,REMOVED
+8F3094001641,Ethyl Acetate from SimpleScentsDIY,141-78-6,0.124,,,,,,Not Listed,REMOVED
+8F3094001434,Ethyl Butyrate from SimpleScentsDIY,105-54-4,0.103,,,,,,Not Listed,REMOVED
+8F3094005311,Ethyl Linalool from SimpleScentsDIY,10339-55-6,0.185,,,,,,Not Listed,REMOVED
+8F3094001695,Ethyl Maltol (Powder) from SimpleScentsDIY,4940-11-8,0.309,,,,,,Not Listed,REMOVED
+8F3094001696,Ethyl Maltol 10% in DPG from SimpleScentsDIY,,0.103,,TRUE,Ethyl Maltol (Powder) from SimpleScentsDIY,ไดโพรไพลีน ไกลคอล / Dipropylene Glycol / DPG from SimpleScentsDIY,10.00%,Not Listed,REMOVED
+8F3094001646,Ethyl Safranate from SimpleScentsDIY,35044-59-8,1.236,,,,,,Not Listed,REMOVED
+8F3094001699,Ethyl Vanillin (Powder) from SimpleScentsDIY,121-32-4,0.309,,,,,,Not Listed,REMOVED
+8F3094001700,Ethyl Vanillin 10% in DPG from SimpleScentsDIY,,0.103,,TRUE,Ethyl Vanillin (Powder) from SimpleScentsDIY,ไดโพรไพลีน ไกลคอล / Dipropylene Glycol / DPG from SimpleScentsDIY,10.00%,Not Listed,REMOVED
+8F3094001886,Ethylene Brassylate (Musk T) from SimpleScentsDIY,105-95-3,0.175,,,,,,Not Listed,REMOVED
+8F3094001864,Eugenol Nat from SimpleScentsDIY,97-53-0,0.165,,,,,,Not Listed,REMOVED
+8F3094001435,Evernyl (Moss) 10% in DPG from SimpleScentsDIY,,0.124,,TRUE,Evernyl (Powder) from SimpleScentsDIY,ไดโพรไพลีน ไกลคอล / Dipropylene Glycol / DPG from SimpleScentsDIY,10.00%,Not Listed,REMOVED
+8F3094001564,Evernyl (Powder) from SimpleScentsDIY,4707-47-5,0.495,,,,,,Not Listed,REMOVED
+8F3094001821,Farnesol from SimpleScentsDIY,4602-84-0,0.371,,,,,,Not Listed,REMOVED
+8F3094001789,Fixamber from SimpleScentsDIY,144020-22-4,0.495,,,,,,Not Listed,REMOVED
+8F3094001554,Floralozone from SimpleScentsDIY,67634-14-4,0.165,,,,,,Not Listed,REMOVED
+8F3094005319,Florhydral from SimpleScentsDIY,125109-85-5,0.866,,,,,,Not Listed,REMOVED
+8F3094001285,Florol from SimpleScentsDIY,63500-71-0,0.165,,,,,,Not Listed,REMOVED
+8F3094001776,Floropal from SimpleScentsDIY,5182-36-5,0.185,,,,,,Not Listed,REMOVED
+8F3094001481,Fragolane / Fructone B from SimpleScentsDIY,6413.-10-1,0.185,,,,,,Not Listed,REMOVED
+8F3094004212,Fruitate from SimpleScentsDIY,80657-64-3,0.618,,,,,,Not Listed,REMOVED
+8F3094001828,Furaneol 10% In DPG from SimpleScentsDIY,3658-77-3,0.155,,,,,,Not Listed,REMOVED
+8F3094001703,Galaxolide 100% (Pure) from SimpleScentsDIY,1222-05-05,0.165,,,,,,Not Listed,REMOVED
+8F3094001731,Gamma Decalactone from SimpleScentsDIY,706-14-9,0.124,,,,,,Not Listed,REMOVED
+8F3094005320,Gamma-Heptalactone from SimpleScentsDIY,105-21-5,0.155,,,,,,Not Listed,REMOVED
+8F3094001903,Gamma-Octalactone from SimpleScentsDIY,104-50-7,0.155,,,,,,Not Listed,REMOVED
+8F3094001291,Geraniol from SimpleScentsDIY,106-24-1,0.165,,,,,,Not Listed,REMOVED
+8F3094001298,Geranyl Acetate from SimpleScentsDIY,105-87-3,0.165,,,,,,Not Listed,REMOVED
+8F3094004193,Globanone 50 % in DPG from SimpleScentsDIY,3100-36-5,0.289,,,,,,Not Listed,REMOVED
+8F3094001653,Guaiacol from SimpleScentsDIY,90-05-1,0.185,,,,,,Not Listed,REMOVED
+8F3094001832,Habanolide from SimpleScentsDIY,111879-80-2,0.299,,,,,,Not Listed,REMOVED
+8F3094001479,Hedione from SimpleScentsDIY,24851-98-7,0.165,,,,,,Not Listed,REMOVED
+8F3094001878,Hedione HC from SimpleScentsDIY,24851-98-7,0.927,,,,,,Not Listed,REMOVED
+8F3094001802,Helional from SimpleScentsDIY,1205-17-0,0.185,,,,,,Not Listed,REMOVED
+8F3094001643,Heliotrope Base from SimpleScentsDIY,120-57-0,0.165,,,,,,Not Listed,REMOVED
+8F3094001831,Helvetolide from SimpleScentsDIY,141773-73-1,1.236,,,,,,Not Listed,REMOVED
+8F3094004195,Hexyl Acetate from SimpleScentsDIY,142-92-7,0.124,,,,,,Not Listed,REMOVED
+8F3094004201,Hexyl Salicylate from SimpleScentsDIY,6259-76-3,0.124,,,,,,Not Listed,REMOVED
+8F3094004211,Hivernal Neo from SimpleScentsDIY,300371-33-9,1.298,,,,,,Not Listed,REMOVED
+8F3094001861,Hydroxycitronellal from SimpleScentsDIY,107-75-5,0.206,,,,,,Not Listed,REMOVED
+8F3094004218,Indole (Powder) from SimpleScentsDIY,,0.433,,,,,,Not Listed,REMOVED
+8F3094001860,Indole 10% in DPG from SimpleScentsDIY,120-72-9,0.144,,TRUE,Indole (Powder) from SimpleScentsDIY,ไดโพรไพลีน ไกลคอล / Dipropylene Glycol / DPG from SimpleScentsDIY,10.00%,Not Listed,REMOVED
+8F3094001265,Iso E Super from SimpleScentsDIY,54464-57-2,0.175,,,,,,Not Listed,REMOVED
+8F3094001694,Isoamyl Acetate from SimpleScentsDIY,123-92-2,0.124,,,,,,Not Listed,REMOVED
+8F3094001553,Isoamyl Butyrate from SimpleScentsDIY,106-27-4,0.103,,,,,,Not Listed,REMOVED
+8F3094001862,Isoamyl Phenyl Acetate from SimpleScentsDIY,102-19-2,0.155,,,,,,Not Listed,REMOVED
+8F3094001691,Isoamyl Salicylate from SimpleScentsDIY,87-20-7,0.124,,,,,,Not Listed,REMOVED
+8F3094001655,Isobutavan from SimpleScentsDIY,20665-85-4,0.526,,,,,,Not Listed,REMOVED
+8F3094001865,IsoButyl Quinoline from SimpleScentsDIY,1333-58-0,2.009,,,,,,Not Listed,REMOVED
+8F3094001692,Isobutyl Salicylate from SimpleScentsDIY,87-19-4,0.206,,,,,,Not Listed,REMOVED
+8F3094001777,Isocyclocitral from SimpleScentsDIY,1335-66-6,0.495,,,,,,Not Listed,REMOVED
+8F3094004214,Isolongifolanone from SimpleScentsDIY,23787-90-8,0.618,,,,,,Not Listed,REMOVED
+8F3094001732,Jasmolactone from SimpleScentsDIY,32764-98-0,3.709,,,,,,Not Listed,REMOVED
+8F3094001693,Jasmonal H (HCA) from SimpleScentsDIY,101-86-0,0.082,,,,,,Not Listed,REMOVED
+8F3094004199,Javanol from SimpleScentsDIY,198404-98-7,1.546,,,,,,Not Listed,REMOVED
+8F3094001887,Jessemal from SimpleScentsDIY,38285-49-3,0.185,,,,,,Not Listed,REMOVED
+8F3094001905,Kephalis from SimpleScentsDIY,36306-87-3,0.464,,,,,,Not Listed,REMOVED
+8F3094001778,Koavone from SimpleScentsDIY,81786-75-6,0.165,,,,,,Not Listed,REMOVED
+8F3094005334,Kohinool from SimpleScentsDIY,87118-95-4,0.618,,,,,,Not Listed,REMOVED
+8E3094000973,Labdanum Resinoid 10% in DPG from SimpleScentsDIY,89997-74-0,0.165,,,,,,Not Listed,REMOVED
+8F3094001795,Lemonile from SimpleScentsDIY,61792-11-8,0.185,,,,,,Not Listed,REMOVED
+8F3094004159,Liffarome from SimpleScentsDIY,67633-96-9,0.556,,,,,,Not Listed,REMOVED
+8F3094004370,Lily Flore (Powder) from SimpleScentsDIY,285977-85-7,1.236,,,,,,Not Listed,REMOVED
+8F3094001912,Lily Flore 10 % In DPG from SimpleScentsDIY,285977-85-7,0.155,,TRUE,Lily Flore (Powder) from SimpleScentsDIY,ไดโพรไพลีน ไกลคอล / Dipropylene Glycol / DPG from SimpleScentsDIY,10.00%,Not Listed,REMOVED
+8F3094001295,Linalool from SimpleScentsDIY,78-70-6,0.124,,,,,,Not Listed,REMOVED
+8F3094001299,Linalyl Acetate from SimpleScentsDIY,115-95-7,0.124,,,,,,Not Listed,REMOVED
+8F3094001705,Magnolan from SimpleScentsDIY,27606-09-03,0.227,,,,,,Not Listed,REMOVED
+8F3094004208,Majantol from SimpleScentsDIY,103694-68-4,0.247,,,,,,Not Listed,REMOVED
+8F3094001433,Manzanate from SimpleScentsDIY,39255-32-8,0.165,,,,,,Not Listed,REMOVED
+8F3094004209,Maple Lactone (Powder) from SimpleScentsDIY,80-71-7,0.309,,,,,,Not Listed,REMOVED
+8F3094004210,Maple Lactone 10 % in DPG from SimpleScentsDIY,80-71-7,0.165,,TRUE,Maple Lactone (Powder) from SimpleScentsDIY,ไดโพรไพลีน ไกลคอล / Dipropylene Glycol / DPG from SimpleScentsDIY,10.00%,Not Listed,REMOVED
+8F3094001779,Mayol from SimpleScentsDIY,13828-37-0,0.247,,,,,,Not Listed,REMOVED
+8F3094001286,Melonal  50% in DPG from SimpleScentsDIY,106-72-9,0.165,,,,,,Not Listed,REMOVED
+8F3094001296,Methyl Anthranilate from SimpleScentsDIY,134-20-3,0.103,,,,,,Not Listed,REMOVED
+8F3094001774,Methyl Benzoate from SimpleScentsDIY,93-58-3,0.103,,,,,,Not Listed,REMOVED
+8F3094001823,Methyl Ionone Pure from SimpleScentsDIY,127-51-5,0.371,,,,,,Not Listed,REMOVED
+8F3094001829,Methyl Octine Carbonate from SimpleScentsDIY,111-80-8,1.051,,,,,,Not Listed,REMOVED
+8F3094001757,"Methyl Pamplemousse, Amarocite from SimpleScentsDIY",67674-46-8,0.165,,,,,,Not Listed,REMOVED
+8F3094005313,Muscenone from SimpleScentsDIY,82356-51-2,2.009,,,,,,Not Listed,REMOVED
+8F3094001708,Muscone from SimpleScentsDIY,541-91-3,3.709,,,,,,Not Listed,REMOVED
+8F3094001552,Natural B-Pinene from SimpleScentsDIY,127-91-3,0.103,,,,,,Not Listed,REMOVED
+8F3094001294,Nerol from SimpleScentsDIY,106-25-2,0.165,,,,,,Not Listed,REMOVED
+8F3094005322,Nerolidol from SimpleScentsDIY,7212-44-4,0.309,,,,,,Not Listed,REMOVED
+8F3094001780,Neroline Bromelia (Powder) from SimpleScentsDIY,93-18-5,0.556,,,,,,Not Listed,REMOVED
+8F3094001781,Neroline Bromelia 10% in DPG from SimpleScentsDIY,,0.103,,TRUE,Neroline Bromelia (Powder) from SimpleScentsDIY,ไดโพรไพลีน ไกลคอล / Dipropylene Glycol / DPG from SimpleScentsDIY,10.00%,Not Listed,REMOVED
+8F3094001767,Neryl Acetate from SimpleScentsDIY,0141-12-8,0.165,,,,,,Not Listed,REMOVED
+8F3094004164,Oakmoss IFRA 10% in DPG from SimpleScentsDIY,90028-68-5,0.495,,,,,,Not Listed,REMOVED
+8F3094005321,Ocimene from SimpleScentsDIY,13877-91-3,1.236,,,,,,Not Listed,REMOVED
+8F3094005338,Octahydrocoumarin from SimpleScentsDIY,4430-31-3,0.227,,,,,,Not Listed,REMOVED
+8F3094004202,Oranger Crystals (Powder) from SimpleScentsDIY,93-08-3,0.309,,,,,,Not Listed,REMOVED
+8F3094004203,Oranger Crystals 10 % in DPG from SimpleScentsDIY,93-08-3,0.165,,TRUE,Oranger Crystals (Powder) from SimpleScentsDIY,ไดโพรไพลีน ไกลคอล / Dipropylene Glycol / DPG from SimpleScentsDIY,10.00%,Not Listed,REMOVED
+8F3094001836,Orivone from SimpleScentsDIY,16587-71-6,0.433,,,,,,Not Listed,REMOVED
+8F3094001783,Para-Cresol from SimpleScentsDIY,106-44-5,0.165,,,,,,Not Listed,REMOVED
+8F3094001782,Patchone (Powder) from SimpleScentsDIY,98-52-2,0.556,,,,,,Not Listed,REMOVED
+8F3094001784,Patchone 10% in DPG from SimpleScentsDIY,,0.124,,TRUE,Patchone (Powder) from SimpleScentsDIY,ไดโพรไพลีน ไกลคอล / Dipropylene Glycol / DPG from SimpleScentsDIY,10.00%,Not Listed,REMOVED
+8F3094001707,Peonile from SimpleScentsDIY,10461-98-0,0.165,,,,,,Not Listed,REMOVED
+8F3094001824,Peranat from SimpleScentsDIY,90397-38-9,0.464,,,,,,Not Listed,REMOVED
+8F3094004213,Phenyl Ethyl Acetate from SimpleScentsDIY,103-45-7,0.124,,,,,,Not Listed,REMOVED
+8F3094001283,Phenyl Ethyl Alcohol from SimpleScentsDIY,60-12-8,0.103,,,,,,Not Listed,REMOVED
+8F3094001565,Raspberry Ketone (Powder) from SimpleScentsDIY,5471-51-2,0.371,,,,,,Not Listed,REMOVED
+8F3094001557,Raspberry Ketone 20% in DPG from SimpleScentsDIY,,0.103,,TRUE,Raspberry Ketone (Powder) from SimpleScentsDIY,ไดโพรไพลีน ไกลคอล / Dipropylene Glycol / DPG from SimpleScentsDIY,10.00%,Not Listed,REMOVED
+8F3094001785,Rhubafuran from SimpleScentsDIY,82461-14-1,0.866,,,,,,Not Listed,REMOVED
+8F3094001888,Rhubofix from SimpleScentsDIY,41816-03-09,1.298,,,,,,Not Listed,REMOVED
+8F3094001902,Romandolide from SimpleScentsDIY,236391-76-7,0.402,,,,,,Not Listed,REMOVED
+8F3094001786,Rosafix (Powder) from SimpleScentsDIY,90-17-5,0.556,,,,,,Not Listed,REMOVED
+8F3094001787,Rosafix 10% in DPG from SimpleScentsDIY,,0.103,,,,,,Not Listed,REMOVED
+8F3094001549,Rose Oxide from SimpleScentsDIY,16409-43-1,0.247,,,,,,Not Listed,REMOVED
+8F3094001649,Safranal from SimpleScentsDIY,116-26-7,1.700,,,,,,Not Listed,REMOVED
+8F3094001548,Sandalore from SimpleScentsDIY,65113-99-7,0.247,,,,,,Not Listed,REMOVED
+8F3094001756,Sandela 85 from SimpleScentsDIY,3407-42-9,0.165,,,,,,Not Listed,REMOVED
+8F3094001889,Scentenal from SimpleScentsDIY,86803-90-9,0.618,,,,,,Not Listed,REMOVED
+8E3094000986,Siam Benzoin Resinoid 50 % In DPG from SimpleScentsDIY,84012-39-5,0.196,,,,,,Not Listed,REMOVED
+8F3094005314,Silvanone Supra from SimpleScentsDIY,109-29-5,0.618,,,,,,Not Listed,REMOVED
+8F3094001706,Stemone from SimpleScentsDIY,22457-23-4,0.206,,,,,,Not Listed,REMOVED
+8F3094004196,Styralyl Acetate from SimpleScentsDIY,93-92-5,0.124,,,,,,Not Listed,REMOVED
+8F3094001652,Suederal LT from SimpleScentsDIY,,0.495,,,,,,Not Listed,REMOVED
+8F3094001827,Sulfurol (Milky) from SimpleScentsDIY,137-00-8,0.299,,,,,,Not Listed,REMOVED
+8F3094005315,Terpineol from SimpleScentsDIY,8000-41-7,0.124,,,,,,Not Listed,REMOVED
+8F3094001702,Timberol from SimpleScentsDIY,70788-30-6,0.371,,,,,,Not Listed,REMOVED
+8F3094001788,Trifernal from SimpleScentsDIY,16251-77-7,0.495,,,,,,Not Listed,REMOVED
+8F3094001650,Triplal from SimpleScentsDIY,68039-49-6,0.165,,,,,,Not Listed,REMOVED
+8F3094005336,Ultravanil 80% In DPG from SimpleScentsDIY,2563-07-07,4.637,,,,,,Not Listed,REMOVED
+8F3094001651,Undecavertol from SimpleScentsDIY,81782-77-6,0.165,,,,,,Not Listed,REMOVED
+8F3094004217,Vanillin (Powder) from SimpleScentsDIY,121-33-5,0.309,,,,,,Not Listed,REMOVED
+8F3094001885,Vanillin 10 % in DPG from SimpleScentsDIY,,0.103,,TRUE,Vanillin (Powder) from SimpleScentsDIY,ไดโพรไพลีน ไกลคอล / Dipropylene Glycol / DPG from SimpleScentsDIY,10.00%,Not Listed,REMOVED
+8F3094001790,Veloutone from SimpleScentsDIY,65443-14-3,0.866,,,,,,Not Listed,REMOVED
+8F3094001482,Verdox from SimpleScentsDIY,88-41-5,0.165,,,,,,Not Listed,REMOVED
+8F3094001837,Vertenex from SimpleScentsDIY,32210-23-4,0.124,,,,,,Not Listed,REMOVED
+8F3094001835,Vertofix from SimpleScentsDIY,32388-55-9,0.155,,,,,,Not Listed,REMOVED
+8F3094004192,Vetikon from SimpleScentsDIY,7403-42-1,0.247,,,,,,Not Listed,REMOVED
+8F3094001648,Vetival from SimpleScentsDIY,4927-39-3,0.412,,,,,,Not Listed,REMOVED
+8F3094005335,Violiff from SimpleScentsDIY,87731-18-8,0.927,,,,,,Not Listed,REMOVED
+8F3094001555,Viridine (PADMA) from SimpleScentsDIY,101-48-4,0.165,,,,,,Not Listed,REMOVED
+8B23094000943,ไดโพรไพลีน ไกลคอล / Dipropylene Glycol / DPG from SimpleScentsDIY,25265-71-8,0.009,,,,,,Not Listed,REMOVED
+8B3094000972,MMB (3-methoxy-3-methyl-1-butanol) 1 kg  from SimpleScentsDIY,56539-66-3,0.013,,,,,,Not Listed,REMOVED
+8B23094000189-1,โพรไพลีน ไกลคอล (Propylene Glycol) from SimpleScentsDIY,57-55-6,0.003,,,,,,Not Listed,REMOVED
