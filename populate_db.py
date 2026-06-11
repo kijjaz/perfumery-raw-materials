@@ -91,8 +91,8 @@ def recover_name_from_slug(url, current_name):
     slug = re.sub(r'\b13-([a-zA-Z])', r'1,3-\1', slug)
     slug = re.sub(r'\b56-decenoic', r'5(6)-decenoic', slug)
     
-    # Replace prefix hyphens with spaces for chemical names
-    prefix_pattern = r'\b(methyl|ethyl|propyl|butyl|amyl|pentyl|hexyl|heptyl|octyl|decyl|neryl|geranyl|linalyl|cinnamyl|benzyl|phenethyl|phenyl|isoamyl|isobutyl|isopropyl|natural)-(?=\d|\([EZ]\))'
+    # Replace prefix hyphens with spaces for chemical names, only at the start of the slug and for specific ester/alkyl prefixes!
+    prefix_pattern = r'^(methyl|ethyl|propyl|butyl|amyl|pentyl|hexyl|heptyl|octyl|decyl|neryl|geranyl|linalyl|cinnamyl|benzyl|phenethyl|phenyl|isoamyl|isobutyl|isopropyl|natural)-(?=\d|\([EZ]\))'
     slug = re.sub(prefix_pattern, r'\1 ', slug, flags=re.IGNORECASE)
 
     # 4. Protect hyphens:
@@ -149,6 +149,25 @@ def clean_msr_name(url, name):
     name_clean = name.strip()
     name_clean = name_clean.replace('\u2011', '-').replace('\u2013', '-').replace('\u2014', '-')
     
+    has_non_ascii = bool(re.search(r'[^\x00-\x7F]+', name_clean))
+    
+    fema_in_slug = False
+    if url:
+        match = re.search(r'/(\d+)-([^/]+)\.html$', url)
+        if match:
+            slug = match.group(2)
+            fema_in_slug = 'fema' in slug.lower() and 'fema' not in name_clean.lower()
+
+    more_words_in_slug = False
+    if url:
+        match = re.search(r'/(\d+)-([^/]+)\.html$', url)
+        if match:
+            slug = match.group(2)
+            slug_clean = re.sub(r'fema[-_]?\d+', '', slug, flags=re.IGNORECASE)
+            slug_words = [w for w in slug_clean.split('-') if w and not w.isdigit()]
+            name_words = [w for w in name_clean.split() if w]
+            more_words_in_slug = len(slug_words) > len(name_words) and len(name_clean) <= 10
+
     is_trunc = (
         name_clean.endswith('(FEMA') or name_clean.endswith('FEMA') or
         name_clean.count('(') > name_clean.count(')') or
@@ -156,12 +175,15 @@ def clean_msr_name(url, name):
         len(name_clean) <= 5 or
         re.search(r'^[A-Za-z]+\s+\([EZ]\)$', name_clean) or
         name_clean in ['(Z)', '[(Z)', '(E)', '[(E)', 'Para', 'Beta', 'Alpha', 'Gamma', 'Meta'] or
-        re.search(r'^[A-Za-z]+\s+\d+$', name_clean)
+        re.search(r'^[A-Za-z]+\s+\d+$', name_clean) or
+        has_non_ascii or
+        fema_in_slug or
+        more_words_in_slug
     )
     
     if is_trunc:
         recovered = recover_name_from_slug(url, name_clean)
-        if recovered and len(recovered) > len(name_clean):
+        if recovered and (len(recovered) > len(name_clean) or has_non_ascii or fema_in_slug):
             return recovered
             
     return name_clean
