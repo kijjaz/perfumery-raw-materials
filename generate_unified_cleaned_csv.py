@@ -609,7 +609,7 @@ def main():
     ]
     
     print(f"Saving {len(output_rows)} rows to {OUTPUT_CSV}...")
-    with open(OUTPUT_CSV, mode='w', encoding='utf-8', newline='') as f:
+    with open(OUTPUT_CSV, mode='w', encoding='utf-8-sig', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(output_rows)
