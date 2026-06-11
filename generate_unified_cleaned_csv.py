@@ -26,6 +26,25 @@ SOLVENTS_MAP = {
     'ALCOHOL': 'Ethanol'
 }
 
+def clean_for_pubchem(name):
+    if not name: return ""
+    name = re.sub(r'[^\x00-\x7F]+', '', name) # Remove non-ASCII
+    name = re.split(r'[\\/|]', name)[0] # Take first part
+    name = re.sub(r'\s+from\s+.*$', '', name, flags=re.I)
+    marketing = ["Fleuressence", "F-TEC", "Replacer", "Base", "Oliffac", "Grasse", "Synarome", "Givaudan", "IFF", "Firmenich", "Symrise", "Takasago"]
+    for term in marketing:
+        name = re.sub(r'\b' + re.escape(term) + r'\b', '', name, flags=re.I)
+    name = re.sub(r'\s+\d+(\.\d+)?%\s+in\s+.*$', '', name, flags=re.I)
+    name = re.sub(r'\s*\d+%.*$', '', name, flags=re.I)
+    name = re.sub(r'\s*[\[\(].*?[\]\)]\s*$', '', name)
+    return name.strip(' ,-—|/')
+
+def clean_supplier_suffix(name):
+    if not name:
+        return ""
+    name = re.sub(r'\s+from\s+(PerfumersWorld|MySkinRecipes|SimpleScentsDIY)\b', '', name, flags=re.IGNORECASE)
+    return name.strip()
+
 def clean_cas_formatting(cas_str):
     if not cas_str:
         return ""
@@ -295,12 +314,18 @@ def main():
                     pc_cas_all = row.get('PubChem_CAS_All', '').split('|')
                     best_pc_cas = pc_cas_all[0] if pc_cas_all and pc_cas_all[0] else ""
                     
-                    fix_map[orig_name] = {
+                    fix_data = {
                         "verified_cas": best_pc_cas,
                         "canonical_title": row.get('PubChem_Title', ''),
                         "status": row.get('Status', ''),
-                        "synonyms": row.get('PubChem_Synonyms_Top10', '')
+                        "synonyms": row.get('PubChem_Synonyms_Top10', ''),
+                        "cid": row.get('PubChem_CID', '')
                     }
+                    fix_map[orig_name] = fix_data
+                    
+                    cleaned_key = clean_for_pubchem(orig_name).lower()
+                    if cleaned_key:
+                        fix_map[cleaned_key] = fix_data
     else:
         print(f"Warning: Audit master {AUDIT_CSV} not found. Continuing without audit fixes.")
 
@@ -330,8 +355,9 @@ def main():
             cleaned_cas = clean_cas_formatting(cas)
             
             # Lookup in audit fixes
-            # We match by the exact Material_Name (e.g. '2 3-Dimethyl Pyrazine from PerfumersWorld')
-            fix = fix_map.get(raw_name)
+            # We match by the exact Material_Name or by the clean name
+            cleaned_search_key = clean_for_pubchem(raw_name).lower()
+            fix = fix_map.get(raw_name) or (fix_map.get(cleaned_search_key) if cleaned_search_key else None)
             
             remediation_status, canonical_name, verified_cas = determine_remediation_status(raw_name, cas, cleaned_cas, fix)
 
@@ -339,7 +365,6 @@ def main():
             is_dil = row.get('Is_Dilution') == 'TRUE'
             active_pct_val = row.get('Active_%', '').strip()
             
-            is_dilution_col = ""
             active_material_col = ""
             solvent_col = ""
             active_pct_col = ""
@@ -349,33 +374,32 @@ def main():
                     pct = float(active_pct_val)
                     if pct <= 1.0:
                         pct = pct * 100.0
-                    pct_str = f"{pct:.2f}%"
+                    pct_str = f"{pct:.2f}"
                 except ValueError:
                     pct_str = ""
-                is_dilution_col = pct_str
-                active_material_col = row.get('Active_Material', '').strip()
-                solvent_col = row.get('Solvent', '').strip()
+                active_material_col = clean_supplier_suffix(row.get('Active_Material', '').strip())
+                solvent_col = clean_supplier_suffix(row.get('Solvent', '').strip())
                 active_pct_col = pct_str
-                
-                # Make sure Active_Material and Solvent have supplier suffixes if not present
-                if active_material_col and not active_material_col.endswith('from PerfumersWorld'):
-                    active_material_col += ' from PerfumersWorld'
-                if solvent_col and not solvent_col.endswith('from PerfumersWorld'):
-                    solvent_col += ' from PerfumersWorld'
+
+            cid = fix.get('cid', '') if fix else ''
+            pubchem_link = f"https://pubchem.ncbi.nlm.nih.gov/compound/{cid}" if cid else ""
 
             output_rows.append({
                 'Product_ID': sku,
+                'Supplier': 'PerfumersWorld',
                 'Material_Name': raw_name,
+                'Clean_Search_Name': cleaned_search_key,
                 'CAS_Number': cas,
                 'Remediation_Status': remediation_status,
                 'Canonical_Name': canonical_name,
                 'Verified_CAS': verified_cas,
+                'PubChem_Link': pubchem_link,
                 'Price_USD/g': f"{price_usd:.4f}" if isinstance(price_usd, float) else "",
-                'Notes': row.get('Notes', '').strip(),
-                'Is_Dilution': is_dilution_col,
+                'Is_Dilution': 'TRUE' if is_dil else 'FALSE',
                 'Active_Material': active_material_col,
                 'Solvent': solvent_col,
-                'Active_%': active_pct_col
+                'Active_%': active_pct_col,
+                'Notes': row.get('Notes', '').strip()
             })
 
     # 2. Process MySkinRecipes
@@ -411,62 +435,66 @@ def main():
                 price_usd = ""
 
             # Lookup in audit fixes
-            # We match by the raw name or the name with suffix (original and cleaned versions)
+            # We match by the raw name, raw name with suffix, or the cleaned version of the name
+            cleaned_search_key = clean_for_pubchem(raw_name).lower()
             fix = (
                 fix_map.get(raw_name_orig) or 
                 fix_map.get(raw_name_orig + ' from MySkinRecipes') or 
                 fix_map.get(raw_name) or 
-                fix_map.get(material_name)
+                fix_map.get(material_name) or
+                (fix_map.get(cleaned_search_key) if cleaned_search_key else None)
             )
             
             remediation_status, canonical_name, verified_cas = determine_remediation_status(raw_name, cas, cleaned_cas, fix)
 
             # Dilution details from name or columns
             dilution_info = parse_dilution_from_name(raw_name, 'MySkinRecipes')
-            is_dilution_col = ""
+            is_dil = False
             active_material_col = ""
             solvent_col = ""
             active_pct_col = ""
             
             if dilution_info:
+                is_dil = True
                 act_name, pct, solv_name = dilution_info
-                pct_str = f"{pct:.2f}%"
-                is_dilution_col = pct_str
-                active_material_col = act_name + ' from MySkinRecipes'
-                solvent_col = (solv_name + ' from MySkinRecipes') if solv_name else ""
+                pct_str = f"{pct:.2f}"
+                active_material_col = clean_supplier_suffix(act_name)
+                solvent_col = clean_supplier_suffix(solv_name) if solv_name else ""
                 active_pct_col = pct_str
             elif row.get('Is_Dilution') == 'TRUE':
+                is_dil = True
                 # Parse Active_%
                 act_pct_val = row.get('Active_%', '').strip()
                 try:
                     pct = float(act_pct_val)
                     if pct <= 1.0:
                         pct = pct * 100.0
-                    pct_str = f"{pct:.2f}%"
+                    pct_str = f"{pct:.2f}"
                 except ValueError:
                     pct_str = ""
-                is_dilution_col = pct_str
-                active_material_col = row.get('Active_Material', '').strip()
-                if active_material_col and not active_material_col.endswith('from MySkinRecipes'):
-                    active_material_col += ' from MySkinRecipes'
-                solvent_col = row.get('Solvent', '').strip()
-                if solvent_col and not solvent_col.endswith('from MySkinRecipes'):
-                    solvent_col += ' from MySkinRecipes'
+                active_material_col = clean_supplier_suffix(row.get('Active_Material', '').strip())
+                solvent_col = clean_supplier_suffix(row.get('Solvent', '').strip())
                 active_pct_col = pct_str
+
+            cid = fix.get('cid', '') if fix else ''
+            pubchem_link = f"https://pubchem.ncbi.nlm.nih.gov/compound/{cid}" if cid else ""
 
             output_rows.append({
                 'Product_ID': sku,
+                'Supplier': 'MySkinRecipes',
                 'Material_Name': material_name,
+                'Clean_Search_Name': cleaned_search_key,
                 'CAS_Number': cas,
                 'Remediation_Status': remediation_status,
                 'Canonical_Name': canonical_name,
                 'Verified_CAS': verified_cas,
+                'PubChem_Link': pubchem_link,
                 'Price_USD/g': f"{price_usd:.4f}" if isinstance(price_usd, float) else "",
-                'Notes': row.get('Notes', '').strip(),
-                'Is_Dilution': is_dilution_col,
+                'Is_Dilution': 'TRUE' if is_dil else 'FALSE',
                 'Active_Material': active_material_col,
                 'Solvent': solvent_col,
-                'Active_%': active_pct_col
+                'Active_%': active_pct_col,
+                'Notes': row.get('Notes', '').strip()
             })
 
     # 3. Process SimpleScentsDIY
@@ -501,64 +529,71 @@ def main():
                 price_usd = ""
 
             # Lookup in audit fixes
-            # We match by the raw name or the name with suffix
-            fix = fix_map.get(raw_name) or fix_map.get(material_name)
+            # We match by the raw name, raw name with suffix, or the cleaned version of the name
+            cleaned_search_key = clean_for_pubchem(raw_name).lower()
+            fix = (
+                fix_map.get(raw_name) or 
+                fix_map.get(material_name) or
+                (fix_map.get(cleaned_search_key) if cleaned_search_key else None)
+            )
             
             remediation_status, canonical_name, verified_cas = determine_remediation_status(raw_name, cas, cleaned_cas, fix)
 
             # Dilution details from name or columns
             dilution_info = parse_dilution_from_name(raw_name, 'SimpleScentsDIY')
-            is_dilution_col = ""
+            is_dil = False
             active_material_col = ""
             solvent_col = ""
             active_pct_col = ""
             
             if dilution_info:
+                is_dil = True
                 act_name, pct, solv_name = dilution_info
-                pct_str = f"{pct:.2f}%"
-                is_dilution_col = pct_str
-                active_material_col = act_name + ' from SimpleScentsDIY'
-                solvent_col = (solv_name + ' from SimpleScentsDIY') if solv_name else ""
+                pct_str = f"{pct:.2f}"
+                active_material_col = clean_supplier_suffix(act_name)
+                solvent_col = clean_supplier_suffix(solv_name) if solv_name else ""
                 active_pct_col = pct_str
             elif row.get('Is_Dilution') == 'TRUE':
+                is_dil = True
                 # Parse Active_%
                 act_pct_val = row.get('Active_%', '').strip()
                 try:
                     pct = float(act_pct_val)
                     if pct <= 1.0:
                         pct = pct * 100.0
-                    pct_str = f"{pct:.2f}%"
+                    pct_str = f"{pct:.2f}"
                 except ValueError:
                     pct_str = ""
-                is_dilution_col = pct_str
-                active_material_col = row.get('Active_Material', '').strip()
-                if active_material_col and not active_material_col.endswith('from SimpleScentsDIY'):
-                    active_material_col += ' from SimpleScentsDIY'
-                solvent_col = row.get('Solvent', '').strip()
-                if solvent_col and not solvent_col.endswith('from SimpleScentsDIY'):
-                    solvent_col += ' from SimpleScentsDIY'
+                active_material_col = clean_supplier_suffix(row.get('Active_Material', '').strip())
+                solvent_col = clean_supplier_suffix(row.get('Solvent', '').strip())
                 active_pct_col = pct_str
+
+            cid = fix.get('cid', '') if fix else ''
+            pubchem_link = f"https://pubchem.ncbi.nlm.nih.gov/compound/{cid}" if cid else ""
 
             output_rows.append({
                 'Product_ID': sku,
+                'Supplier': 'SimpleScentsDIY',
                 'Material_Name': material_name,
+                'Clean_Search_Name': cleaned_search_key,
                 'CAS_Number': cas,
                 'Remediation_Status': remediation_status,
                 'Canonical_Name': canonical_name,
                 'Verified_CAS': verified_cas,
+                'PubChem_Link': pubchem_link,
                 'Price_USD/g': f"{price_usd:.4f}" if isinstance(price_usd, float) else "",
-                'Notes': row.get('Notes', '').strip(),
-                'Is_Dilution': is_dilution_col,
+                'Is_Dilution': 'TRUE' if is_dil else 'FALSE',
                 'Active_Material': active_material_col,
                 'Solvent': solvent_col,
-                'Active_%': active_pct_col
+                'Active_%': active_pct_col,
+                'Notes': row.get('Notes', '').strip()
             })
 
     # Save to consolidated output CSV
     fieldnames = [
-        'Product_ID', 'Material_Name', 'CAS_Number', 'Remediation_Status', 
-        'Canonical_Name', 'Verified_CAS', 'Price_USD/g', 'Notes', 
-        'Is_Dilution', 'Active_Material', 'Solvent', 'Active_%'
+        'Product_ID', 'Supplier', 'Material_Name', 'Clean_Search_Name', 'CAS_Number', 
+        'Remediation_Status', 'Canonical_Name', 'Verified_CAS', 'PubChem_Link', 
+        'Price_USD/g', 'Is_Dilution', 'Active_Material', 'Solvent', 'Active_%', 'Notes'
     ]
     
     print(f"Saving {len(output_rows)} rows to {OUTPUT_CSV}...")
