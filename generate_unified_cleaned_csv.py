@@ -377,8 +377,12 @@ def main():
                     pct_str = f"{pct:.2f}"
                 except ValueError:
                     pct_str = ""
-                active_material_col = clean_supplier_suffix(row.get('Active_Material', '').strip())
-                solvent_col = clean_supplier_suffix(row.get('Solvent', '').strip())
+                active_material_col = row.get('Active_Material', '').strip()
+                if active_material_col and not active_material_col.endswith('from PerfumersWorld'):
+                    active_material_col += ' from PerfumersWorld'
+                solvent_col = row.get('Solvent', '').strip()
+                if solvent_col and not solvent_col.endswith('from PerfumersWorld'):
+                    solvent_col += ' from PerfumersWorld'
                 active_pct_col = pct_str
 
             cid = fix.get('cid', '') if fix else ''
@@ -458,8 +462,8 @@ def main():
                 is_dil = True
                 act_name, pct, solv_name = dilution_info
                 pct_str = f"{pct:.2f}"
-                active_material_col = clean_supplier_suffix(act_name)
-                solvent_col = clean_supplier_suffix(solv_name) if solv_name else ""
+                active_material_col = act_name + ' from MySkinRecipes'
+                solvent_col = (solv_name + ' from MySkinRecipes') if solv_name else ""
                 active_pct_col = pct_str
             elif row.get('Is_Dilution') == 'TRUE':
                 is_dil = True
@@ -472,8 +476,12 @@ def main():
                     pct_str = f"{pct:.2f}"
                 except ValueError:
                     pct_str = ""
-                active_material_col = clean_supplier_suffix(row.get('Active_Material', '').strip())
-                solvent_col = clean_supplier_suffix(row.get('Solvent', '').strip())
+                active_material_col = row.get('Active_Material', '').strip()
+                if active_material_col and not active_material_col.endswith('from MySkinRecipes'):
+                    active_material_col += ' from MySkinRecipes'
+                solvent_col = row.get('Solvent', '').strip()
+                if solvent_col and not solvent_col.endswith('from MySkinRecipes'):
+                    solvent_col += ' from MySkinRecipes'
                 active_pct_col = pct_str
 
             cid = fix.get('cid', '') if fix else ''
@@ -550,8 +558,8 @@ def main():
                 is_dil = True
                 act_name, pct, solv_name = dilution_info
                 pct_str = f"{pct:.2f}"
-                active_material_col = clean_supplier_suffix(act_name)
-                solvent_col = clean_supplier_suffix(solv_name) if solv_name else ""
+                active_material_col = act_name + ' from SimpleScentsDIY'
+                solvent_col = (solv_name + ' from SimpleScentsDIY') if solv_name else ""
                 active_pct_col = pct_str
             elif row.get('Is_Dilution') == 'TRUE':
                 is_dil = True
@@ -564,8 +572,12 @@ def main():
                     pct_str = f"{pct:.2f}"
                 except ValueError:
                     pct_str = ""
-                active_material_col = clean_supplier_suffix(row.get('Active_Material', '').strip())
-                solvent_col = clean_supplier_suffix(row.get('Solvent', '').strip())
+                active_material_col = row.get('Active_Material', '').strip()
+                if active_material_col and not active_material_col.endswith('from SimpleScentsDIY'):
+                    active_material_col += ' from SimpleScentsDIY'
+                solvent_col = row.get('Solvent', '').strip()
+                if solvent_col and not solvent_col.endswith('from SimpleScentsDIY'):
+                    solvent_col += ' from SimpleScentsDIY'
                 active_pct_col = pct_str
 
             cid = fix.get('cid', '') if fix else ''
