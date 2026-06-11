@@ -200,6 +200,45 @@ def clean_msr_name(url, name):
             
     return name_clean
 
+def determine_remediation_status(raw_name, cas, cleaned_cas, fix):
+    remediation_status = "VERIFIED"
+    canonical_name = ""
+    verified_cas = cleaned_cas
+    
+    if fix:
+        canonical_name = fix['canonical_title']
+        if fix['status'] == 'WIP_DISCREPANCY':
+            verified_cas = clean_cas_formatting(fix['verified_cas']) or cleaned_cas
+            remediation_status = "FIXED_FROM_AUDIT"
+        elif fix['status'] == 'DATA_GAP':
+            remediation_status = "DATA_GAP_MANUAL_CHECK"
+        elif fix['status'] == 'NATURAL_MIXTURE':
+            remediation_status = "NATURAL_MIXTURE"
+        elif fix['status'] == 'WIP_VERIFIED':
+            remediation_status = "VERIFIED_MATCH"
+    else:
+        # Default logic if not in audit map
+        if any(x in raw_name.lower() for x in [" oil ", " essential", " absolute", " resinoid", " extract"]):
+            remediation_status = "NATURAL_MIXTURE"
+        elif not cleaned_cas:
+            remediation_status = "DATA_GAP_MANUAL_CHECK"
+
+    # Refine DATA_GAP_MANUAL_CHECK to identify proprietary mixtures or natural mixtures
+    if remediation_status == "DATA_GAP_MANUAL_CHECK":
+        name_lower = raw_name.lower()
+        cas_lower = cas.lower() if cas else ""
+        if any(x in name_lower for x in [" oil ", " essential", " absolute", " resinoid", " extract"]):
+            remediation_status = "NATURAL_MIXTURE"
+        elif (any(x in name_lower for x in ["f-tec", "fleuressence", "replacer", "base", "oliffac", "grasse", "synarome", "blend", "complex", " reconstituted"]) or
+              "mixture" in cas_lower or "confidential" in cas_lower or "none" in cas_lower):
+            remediation_status = "PROPRIETARY_MIXTURE"
+
+    # Check if CAS was modified by formatting
+    if remediation_status == "VERIFIED" and cleaned_cas != cas and re.match(r'^\d+-\d+-\d+$', cleaned_cas):
+        remediation_status = "FORMATTING_FIX"
+        
+    return remediation_status, canonical_name, verified_cas
+
 def parse_dilution_from_name(name, supplier):
     # e.g., "Skatole 1% in DPG" or "Galaxolide 50% in DPG"
     match = re.search(r'(\d+(?:\.\d+)?)\s*%\s*(?:in\s+)?([A-Za-z0-9]+)', name, re.IGNORECASE)
@@ -294,31 +333,7 @@ def main():
             # We match by the exact Material_Name (e.g. '2 3-Dimethyl Pyrazine from PerfumersWorld')
             fix = fix_map.get(raw_name)
             
-            canonical_name = ""
-            verified_cas = cleaned_cas
-            remediation_status = "VERIFIED"
-            
-            if fix:
-                canonical_name = fix['canonical_title']
-                if fix['status'] == 'WIP_DISCREPANCY':
-                    verified_cas = clean_cas_formatting(fix['verified_cas']) or cleaned_cas
-                    remediation_status = "FIXED_FROM_AUDIT"
-                elif fix['status'] == 'DATA_GAP':
-                    remediation_status = "DATA_GAP_MANUAL_CHECK"
-                elif fix['status'] == 'NATURAL_MIXTURE':
-                    remediation_status = "NATURAL_MIXTURE"
-                elif fix['status'] == 'WIP_VERIFIED':
-                    remediation_status = "VERIFIED_MATCH"
-            else:
-                # Default logic if not in audit map
-                if any(x in raw_name.lower() for x in [" oil ", " essential", " absolute", " resinoid", " extract"]):
-                    remediation_status = "NATURAL_MIXTURE"
-                elif not cleaned_cas:
-                    remediation_status = "DATA_GAP_MANUAL_CHECK"
-
-            # Check if CAS was modified by formatting
-            if remediation_status == "VERIFIED" and cleaned_cas != cas and re.match(r'^\d+-\d+-\d+$', cleaned_cas):
-                remediation_status = "FORMATTING_FIX"
+            remediation_status, canonical_name, verified_cas = determine_remediation_status(raw_name, cas, cleaned_cas, fix)
 
             # Dilution details
             is_dil = row.get('Is_Dilution') == 'TRUE'
@@ -404,31 +419,7 @@ def main():
                 fix_map.get(material_name)
             )
             
-            canonical_name = ""
-            verified_cas = cleaned_cas
-            remediation_status = "VERIFIED"
-            
-            if fix:
-                canonical_name = fix['canonical_title']
-                if fix['status'] == 'WIP_DISCREPANCY':
-                    verified_cas = clean_cas_formatting(fix['verified_cas']) or cleaned_cas
-                    remediation_status = "FIXED_FROM_AUDIT"
-                elif fix['status'] == 'DATA_GAP':
-                    remediation_status = "DATA_GAP_MANUAL_CHECK"
-                elif fix['status'] == 'NATURAL_MIXTURE':
-                    remediation_status = "NATURAL_MIXTURE"
-                elif fix['status'] == 'WIP_VERIFIED':
-                    remediation_status = "VERIFIED_MATCH"
-            else:
-                # Default logic if not in audit map
-                if any(x in raw_name.lower() for x in [" oil ", " essential", " absolute", " resinoid", " extract"]):
-                    remediation_status = "NATURAL_MIXTURE"
-                elif not cleaned_cas:
-                    remediation_status = "DATA_GAP_MANUAL_CHECK"
-
-            # Check if CAS was modified by formatting
-            if remediation_status == "VERIFIED" and cleaned_cas != cas and re.match(r'^\d+-\d+-\d+$', cleaned_cas):
-                remediation_status = "FORMATTING_FIX"
+            remediation_status, canonical_name, verified_cas = determine_remediation_status(raw_name, cas, cleaned_cas, fix)
 
             # Dilution details from name or columns
             dilution_info = parse_dilution_from_name(raw_name, 'MySkinRecipes')
@@ -513,31 +504,7 @@ def main():
             # We match by the raw name or the name with suffix
             fix = fix_map.get(raw_name) or fix_map.get(material_name)
             
-            canonical_name = ""
-            verified_cas = cleaned_cas
-            remediation_status = "VERIFIED"
-            
-            if fix:
-                canonical_name = fix['canonical_title']
-                if fix['status'] == 'WIP_DISCREPANCY':
-                    verified_cas = clean_cas_formatting(fix['verified_cas']) or cleaned_cas
-                    remediation_status = "FIXED_FROM_AUDIT"
-                elif fix['status'] == 'DATA_GAP':
-                    remediation_status = "DATA_GAP_MANUAL_CHECK"
-                elif fix['status'] == 'NATURAL_MIXTURE':
-                    remediation_status = "NATURAL_MIXTURE"
-                elif fix['status'] == 'WIP_VERIFIED':
-                    remediation_status = "VERIFIED_MATCH"
-            else:
-                # Default logic if not in audit map
-                if any(x in raw_name.lower() for x in [" oil ", " essential", " absolute", " resinoid", " extract"]):
-                    remediation_status = "NATURAL_MIXTURE"
-                elif not cleaned_cas:
-                    remediation_status = "DATA_GAP_MANUAL_CHECK"
-
-            # Check if CAS was modified by formatting
-            if remediation_status == "VERIFIED" and cleaned_cas != cas and re.match(r'^\d+-\d+-\d+$', cleaned_cas):
-                remediation_status = "FORMATTING_FIX"
+            remediation_status, canonical_name, verified_cas = determine_remediation_status(raw_name, cas, cleaned_cas, fix)
 
             # Dilution details from name or columns
             dilution_info = parse_dilution_from_name(raw_name, 'SimpleScentsDIY')
