@@ -1,13 +1,16 @@
 import csv
 import re
 import os
+import datetime
 
 # --- Configuration ---
 AUDIT_CSV = 'Perfumery_Raw_Materials_Audit_Master.csv'
 PW_CSV = 'perfumersworld_20260401_updated.csv'
 MSR_CSV = 'myskinrecipes_20260317.csv'
 SSD_CSV = 'simplescentsdiy_20260317.csv'
-OUTPUT_CSV = '🌿 RawMaterials_v0_1_11_Cleaned.csv'
+
+current_date = datetime.datetime.now().strftime("%Y%m%d")
+OUTPUT_CSV = f'🌿 RawMaterials_v0_1_11_Cleaned_{current_date}.csv'
 
 EXCHANGE_RATE_USD_THB = 35.0
 
