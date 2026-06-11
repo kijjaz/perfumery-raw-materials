@@ -34,6 +34,138 @@ SOLVENT_CIDS = {
     'Ethanol': '702'
 }
 
+def recover_name_from_slug(url, current_name):
+    if not url or 'myskinrecipes.com' not in url:
+        return current_name
+        
+    match = re.search(r'/(\d+)-([^/]+)\.html$', url)
+    if not match:
+        return current_name
+        
+    slug = match.group(2).strip('- ')
+    
+    # 1. Extract FEMA tag
+    fema_match = re.search(r'fema[-_]?(\d+)', slug, re.IGNORECASE)
+    fema_str = ''
+    if fema_match:
+        fema_str = f' (FEMA {fema_match.group(1)})'
+        slug = re.sub(r'fema[-_]?\d+', '', slug, flags=re.IGNORECASE).strip('- ')
+
+    # 2. Normalize stereochemistry prefixes/infixes
+    prefix = ''
+    if slug.lower().startswith('z-') or slug.lower().startswith('-z-'):
+        prefix = '(Z)-'
+        slug = re.sub(r'^[-zZ]+-', '', slug)
+    elif slug.lower().startswith('e-') or slug.lower().startswith('-e-'):
+        prefix = '(E)-'
+        slug = re.sub(r'^[-eE]+-', '', slug)
+    elif slug.lower().startswith('ee-'):
+        prefix = '(E,E)-'
+        slug = slug[3:]
+    elif slug.lower().startswith('cis-'):
+        prefix = 'Cis-'
+        slug = slug[4:]
+    elif slug.lower().startswith('trans-'):
+        prefix = 'Trans-'
+        slug = slug[6:]
+    elif re.match(r'^\d+[ez]-', slug, re.IGNORECASE):
+        m_ste = re.match(r'^(\d+)([ez])-(.*)', slug, re.IGNORECASE)
+        if m_ste:
+            prefix = f'({m_ste.group(1)}{m_ste.group(2).upper()})-'
+            slug = m_ste.group(3)
+        
+    # Infixes
+    slug = re.sub(r'([a-zA-Z]+)-(e|z)-', r'\1 (\2)-', slug, flags=re.IGNORECASE)
+    slug = re.sub(r'(\d+)-(e|z)-', r'\1-(\2)-', slug, flags=re.IGNORECASE)
+    slug = re.sub(r'\(([ez])\)', lambda m: f'({m.group(1).upper()})', slug, flags=re.IGNORECASE)
+
+    # 3. Add commas for multi-digits at start if they represent chemical positions
+    slug = re.sub(r'\b113-([a-zA-Z])', r'1,1,3-\1', slug)
+    slug = re.sub(r'\b24-([a-zA-Z])', r'2,4-\1', slug)
+    slug = re.sub(r'\b45-([a-zA-Z])', r'4,5-\1', slug)
+    slug = re.sub(r'\b245-([a-zA-Z])', r'2,4,5-\1', slug)
+    slug = re.sub(r'\b35-([a-zA-Z])', r'3,5-\1', slug)
+    slug = re.sub(r'\b36-([a-zA-Z])', r'3,6-\1', slug)
+    slug = re.sub(r'\b26-([a-zA-Z])', r'2,6-\1', slug)
+    slug = re.sub(r'\b2611-([a-zA-Z])', r'2,6,11-\1', slug)
+    slug = re.sub(r'\b13-([a-zA-Z])', r'1,3-\1', slug)
+    slug = re.sub(r'\b56-decenoic', r'5(6)-decenoic', slug)
+    
+    # Replace prefix hyphens with spaces for chemical names
+    prefix_pattern = r'\b(methyl|ethyl|propyl|butyl|amyl|pentyl|hexyl|heptyl|octyl|decyl|neryl|geranyl|linalyl|cinnamyl|benzyl|phenethyl|phenyl|isoamyl|isobutyl|isopropyl|natural)-(?=\d|\([EZ]\))'
+    slug = re.sub(prefix_pattern, r'\1 ', slug, flags=re.IGNORECASE)
+
+    # 4. Protect hyphens:
+    # - Adjacent to digit on either side
+    # - Adjacent to (E) or (Z) on either side
+    def protect(m):
+        return m.group(0).replace('-', '__HYPHEN__')
+        
+    slug = re.sub(r'\d+-', protect, slug)
+    slug = re.sub(r'-\d+', protect, slug)
+    slug = re.sub(r'\([EZ]\)-', protect, slug)
+    slug = re.sub(r'-\([EZ]\)', protect, slug)
+
+    # Replace remaining hyphens with spaces
+    slug = slug.replace('-', ' ')
+
+    # Restore protected hyphens
+    slug = slug.replace('__HYPHEN__', '-')
+
+    # 5. Title Case words
+    words = slug.split()
+    capitalized_words = []
+    for w in words:
+        if '-' in w:
+            w_parts = w.split('-')
+            capitalized_parts = []
+            for wp in w_parts:
+                if wp.lower() in ['yl', 'ol', 'ene', 'al', 'one', 'acid', 'd', 'l', 'dl']:
+                    capitalized_parts.append(wp.lower())
+                elif wp.isalpha():
+                    capitalized_parts.append(wp.capitalize())
+                else:
+                    capitalized_parts.append(wp)
+            capitalized_words.append('-'.join(capitalized_parts))
+        else:
+            if w.lower() in ['in', 'of', 'and']:
+                capitalized_words.append(w.lower())
+            elif w.isalpha():
+                capitalized_words.append(w.capitalize())
+            else:
+                capitalized_words.append(w)
+                
+    result = prefix + ' '.join(capitalized_words) + fema_str
+    
+    # Simple clean up of common issues
+    result = result.replace('2 4-dimethyl', '2,4-dimethyl')
+    result = result.replace('3 4-methoxyphenyl', '3,4-methoxyphenyl')
+    result = result.replace('3-methyl-5-phenylpentan 1-ol', '3-methyl-5-phenylpentan-1-ol')
+    result = result.replace('2 4-methylcyclohexylpropan 2-ol', '2-(4-methylcyclohexyl)propan-2-ol')
+    
+    return result
+
+def clean_msr_name(url, name):
+    name_clean = name.strip()
+    name_clean = name_clean.replace('\u2011', '-').replace('\u2013', '-').replace('\u2014', '-')
+    
+    is_trunc = (
+        name_clean.endswith('(FEMA') or name_clean.endswith('FEMA') or
+        name_clean.count('(') > name_clean.count(')') or
+        name_clean.count('[') > name_clean.count(']') or
+        len(name_clean) <= 5 or
+        re.search(r'^[A-Za-z]+\s+\([EZ]\)$', name_clean) or
+        name_clean in ['(Z)', '[(Z)', '(E)', '[(E)', 'Para', 'Beta', 'Alpha', 'Gamma', 'Meta'] or
+        re.search(r'^[A-Za-z]+\s+\d+$', name_clean)
+    )
+    
+    if is_trunc:
+        recovered = recover_name_from_slug(url, name_clean)
+        if recovered and len(recovered) > len(name_clean):
+            return recovered
+            
+    return name_clean
+
 def clean_for_pubchem(name):
     if not name: return ""
     name = re.sub(r'[^\x00-\x7F]+', '', name) # Remove non-ASCII
@@ -358,7 +490,7 @@ def main():
             """, (solv_id, solv_code, 'Generic', 0, 'Solvent'))
             created_solvents[solv_code] = solv_id
 
-    def lookup_material_id(url, name, cas):
+    def lookup_material_id(url, name, cas, orig_name=None):
         # 1. Match by URL
         if url and url.lower() in url_to_id:
             return url_to_id[url.lower()]
@@ -367,6 +499,9 @@ def main():
         if name and name.lower() in orig_name_to_id:
             return orig_name_to_id[name.lower()]
             
+        if orig_name and orig_name.lower() in orig_name_to_id:
+            return orig_name_to_id[orig_name.lower()]
+            
         # 3. Match by stripped Name
         if name:
             stripped = re.sub(r'\s+from\s+.*$', '', name, flags=re.I).lower()
@@ -374,6 +509,15 @@ def main():
                 return orig_name_to_id[stripped]
             
             clean_name = clean_for_pubchem(name).lower()
+            if clean_name in cleaned_name_to_id:
+                return cleaned_name_to_id[clean_name]
+
+        if orig_name:
+            stripped = re.sub(r'\s+from\s+.*$', '', orig_name, flags=re.I).lower()
+            if stripped in orig_name_to_id:
+                return orig_name_to_id[stripped]
+            
+            clean_name = clean_for_pubchem(orig_name).lower()
             if clean_name in cleaned_name_to_id:
                 return cleaned_name_to_id[clean_name]
                 
@@ -464,7 +608,8 @@ def main():
         reader = csv.DictReader(f)
         for row in reader:
             sku = row['Product_ID'].strip()
-            name = row['Material_Name']
+            name_orig = row['Material_Name'].strip()
+            name = clean_msr_name(row.get('Product_URL', ''), name_orig)
             cas = row['CAS_Number']
             package_size = row.get('Package_Size')
             url = row.get('Product_URL', '')
@@ -486,7 +631,7 @@ def main():
             dilution_info = parse_dilution_from_name(name)
             is_mixture = 1 if dilution_info or row.get('Is_Dilution') == 'TRUE' else 0
             
-            chem_id, nat_id = lookup_material_id(url, name, cas)
+            chem_id, nat_id = lookup_material_id(url, name, cas, orig_name=name_orig)
             
             # If name matches dilution
             if not chem_id and not nat_id and dilution_info:
