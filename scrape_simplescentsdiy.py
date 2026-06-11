@@ -24,6 +24,7 @@ import ssl
 import time
 import urllib.request
 import urllib.parse
+import json
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -170,54 +171,92 @@ def parse_product_page(url: str) -> dict:
     te.feed(html)
     text = te.get_text()
 
-    # ── SKU ──────────────────────────────────────────────────────────────────
+    # Try parsing JSON-LD first
+    json_ld_data = None
+    scripts = re.findall(r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>', html, re.DOTALL | re.IGNORECASE)
+    if not scripts:
+        scripts = [s for s in re.findall(r'<script[^>]*>(.*?)</script>', html, re.DOTALL) if 'schema.org' in s]
+    
+    for s in scripts:
+        try:
+            data = json.loads(s.strip())
+            if isinstance(data, dict) and data.get('@type') == 'Product':
+                json_ld_data = data
+                break
+        except Exception:
+            pass
+
     sku = ""
-    m = re.search(r"SKU\s*:\s*([A-Z0-9]+)", text)
-    if m:
-        sku = m.group(1).strip()
-    # fallback: extract from URL  /product/36439-36356/betaionone → 36439
-    if not sku:
-        m2 = re.search(r"/product/(\d+)-", url)
-        if m2:
-            sku = m2.group(1)
-
-    # ── Product name: from <title> ────────────────────────────────────────────
-    m_title = re.search(r"<title[^>]*>(.*?)</title>", html, re.IGNORECASE | re.DOTALL)
-    raw_title = m_title.group(1) if m_title else ""
-    # Typical: "Aroma Chemicals : Beta Ionone 15 ml"
-    name = raw_title.strip()
-    if ":" in name:
-        name = name.split(":", 1)[1].strip()
-    # Remove HTML entities
-    name = re.sub(r"&[a-z]+;", " ", name).strip()
-
-    # ── Package size from name ───────────────────────────────────────────────
-    size_match = re.search(r"(\d+(?:\.\d+)?\s*(?:ml|g|oz))", name, re.IGNORECASE)
-    package_size = size_match.group(1).strip() if size_match else ""
-    # Clean size from name for canonical material name
-    material_name = re.sub(r"\s*\d+(?:\.\d+)?\s*(?:ml|g|oz)\b", "", name, flags=re.IGNORECASE).strip()
-
-    # ── Price ─────────────────────────────────────────────────────────────────
-    # Pattern: ฿ 250 or 250.00 ฿ or "ราคา 250 บาท"
+    material_name = ""
+    package_size = ""
     price_thb = None
-    # Thai baht sign or "บาท"
-    patterns = [
-        r"฿\s*([\d,]+(?:\.\d+)?)",
-        r"([\d,]+(?:\.\d+)?)\s*฿",
-        r"ราคา\s*([\d,]+(?:\.\d+)?)\s*บาท",
-        r"([\d,]+(?:\.\d+)?)\s*บาท",
-    ]
-    for p in patterns:
-        m = re.search(p, text)
-        if m:
-            price_thb = float(m.group(1).replace(",", ""))
-            break
-
-    # ── CAS number ────────────────────────────────────────────────────────────
     cas = ""
-    m_cas = re.search(r"[Cc]as\s*[Nn]o\.?\s*:?\s*(\d{2,7}-\d{2}-\d)", text)
-    if m_cas:
-        cas = m_cas.group(1).strip()
+
+    if json_ld_data:
+        # Extract from JSON-LD
+        sku = json_ld_data.get('sku', '').strip()
+        full_name = json_ld_data.get('name', '').strip()
+        
+        # Clean name & extract size
+        # Remove HTML entities
+        full_name = re.sub(r"&[a-z]+;", " ", full_name).strip()
+        size_match = re.search(r"(\d+(?:\.\d+)?\s*(?:ml|g|oz))", full_name, re.IGNORECASE)
+        package_size = size_match.group(1).strip() if size_match else ""
+        material_name = re.sub(r"\s*\d+(?:\.\d+)?\s*(?:ml|g|oz)\b", "", full_name, flags=re.IGNORECASE).strip()
+        
+        # Extract price
+        price_val = json_ld_data.get('offers', {}).get('price')
+        if price_val:
+            try:
+                price_thb = float(price_val)
+            except ValueError:
+                pass
+                
+        # Extract CAS from description
+        desc = json_ld_data.get('description', '')
+        m_cas = re.search(r'CAS\s*(?:No\.?)?\s*:\s*(\d{2,7}-\d{2}-\d)', desc, re.IGNORECASE)
+        if m_cas:
+            cas = m_cas.group(1).strip()
+
+    # Fallback to older text parsing for any empty fields
+    if not sku:
+        m = re.search(r"SKU\s*:\s*([A-Z0-9]+)", text)
+        if m:
+            sku = m.group(1).strip()
+        if not sku:
+            m2 = re.search(r"/product/(\d+)-", url)
+            if m2:
+                sku = m2.group(1)
+
+    if not material_name:
+        m_title = re.search(r"<title[^>]*>(.*?)</title>", html, re.IGNORECASE | re.DOTALL)
+        raw_title = m_title.group(1) if m_title else ""
+        name = raw_title.strip()
+        if ":" in name:
+            name = name.split(":", 1)[1].strip()
+        name = re.sub(r"&[a-z]+;", " ", name).strip()
+        
+        size_match = re.search(r"(\d+(?:\.\d+)?\s*(?:ml|g|oz))", name, re.IGNORECASE)
+        package_size = size_match.group(1).strip() if size_match else ""
+        material_name = re.sub(r"\s*\d+(?:\.\d+)?\s*(?:ml|g|oz)\b", "", name, flags=re.IGNORECASE).strip()
+
+    if price_thb is None:
+        patterns = [
+            r"฿\s*([\d,]+(?:\.\d+)?)",
+            r"([\d,]+(?:\.\d+)?)\s*฿",
+            r"ราคา\s*([\d,]+(?:\.\d+)?)\s*บาท",
+            r"([\d,]+(?:\.\d+)?)\s*บาท",
+        ]
+        for p in patterns:
+            m = re.search(p, text)
+            if m:
+                price_thb = float(m.group(1).replace(",", ""))
+                break
+
+    if not cas:
+        m_cas = re.search(r"[Cc]as\s*[Nn]o\.?\s*:?\s*(\d{2,7}-\d{2}-\d)", text)
+        if m_cas:
+            cas = m_cas.group(1).strip()
 
     # ── Price per gram ───────────────────────────────────────────────────────
     grams = volume_to_grams(package_size) if package_size else None

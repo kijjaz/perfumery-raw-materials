@@ -20,7 +20,7 @@ from typing import List, Dict, Tuple, Optional
 BASE_URL = "https://www.perfumersworld.com"
 SUPPLIER = "PerfumersWorld"
 INPUT_HTML = "20260401 Perfume Supplies _ PerfumersWorld.html"
-OUTPUT_CSV = "perfumersworld_20260401.csv"
+OUTPUT_CSV = "perfumersworld_20260401_updated.csv"
 
 # SSL context that skips verification
 SSL_CTX = ssl.create_default_context()
@@ -187,25 +187,36 @@ def process_local_html(filepath: str) -> List[Dict]:
         
     print(f"Reading {filepath} ...")
     
-    # We find all <tr> entries in <tbody>
+    # We find all <tr> entries in the HTML to isolate each row
+    tr_pattern = re.compile(r'<tr[^>]*>.*?</tr>', re.DOTALL | re.IGNORECASE)
+    tr_blocks = tr_pattern.findall(html)
+    
     products = []
-    row_pattern = re.compile(
-        r'<tr[^>]*>.*?href="[^"]*view\.php\?pro_id=([^"]+)"[^>]*title="([^"]+)"[^>]*>.*?@ US\$([\d,.]+)/gram</a>.*?</tr>',
-        re.DOTALL | re.IGNORECASE
+    # Match product link (sku and name) and price (allowing flexible unit suffixes like grams? or 0)
+    link_pattern = re.compile(
+        r'href="[^"]*view\.php\?pro_id=([^"&]+)"[^>]*title="([^"]+)"',
+        re.IGNORECASE
+    )
+    price_pattern = re.compile(
+        r'@\s*US\$\s*([\d,.]+)\s*/\s*([a-zA-Z0-9]+)',
+        re.IGNORECASE
     )
     
-    matches = row_pattern.finditer(html)
-    for m in matches:
-        sku = m.group(1).strip()
-        name = m.group(2).strip()
-        price = m.group(3).replace(",", "").strip()
+    for block in tr_blocks:
+        link_match = link_pattern.search(block)
+        price_match = price_pattern.search(block)
         
-        products.append({
-            "Product_ID": sku,
-            "Material_Name": name,
-            "Price_US/g": price
-        })
-        
+        if link_match and price_match:
+            sku = link_match.group(1).strip()
+            name = link_match.group(2).strip()
+            price = price_match.group(1).replace(",", "").strip()
+            
+            products.append({
+                "Product_ID": sku,
+                "Material_Name": name,
+                "Price_US/g": price
+            })
+            
     return products
 
 def main():

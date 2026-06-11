@@ -17,9 +17,13 @@ Product_ID,Material_Name,Supplier,CAS_Number,New CAS,Price_US/g,Notes,Is_Dilutio
 4FD00001,2-Methylbutyl 2-Methylbutyrate from PerfumersWorld,PerfumersWorld,2445-78-5,,0.33,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4FD00001
 4FY22527,2-Octen-4-one from PerfumersWorld,PerfumersWorld,4643-27-0,,4.10,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4FY22527
 0ZH20962,3-Methyl-3-Methoxy Butanol (MMB) from PerfumersWorld,PerfumersWorld,56539-66-3,,0.03,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=0ZH20962
-1VD00002,6-Methyl Coumarin from PerfumersWorld,PerfumersWorld,Not Found,,0.58,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=1VD00002
-5VD07562,6-Methyl Coumarin 10% in DPG from PerfumersWorld,PerfumersWorld,Not Found,,0.18,,TRUE,6-Methyl Coumarin from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.1,https://www.perfumersworld.com/view.php?pro_id=5VD07562
-ISNIFF10,7-Step Custom Creation 10cc Set-Travelling Size Kit from PerfumersWorld,PerfumersWorld,Not Found,,0.18,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=ISNIFF10
+1VD00002,6-Methyl Coumarin from PerfumersWorld,PerfumersWorld,92-48-8,,0.58,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=1VD00002
+5VD07562,6-Methyl Coumarin 10% in DPG from PerfumersWorld,PerfumersWorld,"92-48-8|0.1
+25265-71-8|0.9",,0.18,,TRUE,6-Methyl Coumarin from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.1,https://www.perfumersworld.com/view.php?pro_id=5VD07562
+ISNIFF10,7-Step Custom Creation 10cc Set-Travelling Size Kit from PerfumersWorld,PerfumersWorld,Not Found,,694.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=ISNIFF10
+ISNIFF30,7-Step Custom Creation 30cc Set-Small Display Kit from PerfumersWorld,PerfumersWorld,Not Found,,1595.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=ISNIFF30
+ISNIFF60,7-Step Custom Creation 60cc Set-Full Size Display Kit from PerfumersWorld,PerfumersWorld,Not Found,,2995.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=ISNIFF60
+6AN18003,A-ALDEHYDE F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.18,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6AN18003
 6AN07832,A-Aldehyde Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6AN07832
 6NL18079,ACACIA F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6NL18079
 6NL08389,Acacia Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.19,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6NL08389
@@ -104,7 +108,11 @@ ALP06025,Alpha-Male Factor from PerfumersWorld,PerfumersWorld,Not Found,,0.52,,F
 3WQ11673,Amber Decane from PerfumersWorld,PerfumersWorld,58567-11-6,,0.45,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3WQ11673
 6WV18080,AMBER F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.15,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6WV18080
 6WV12277,Amber Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.12,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6WV12277
-BOTAM12M,Amber Glass Bottles 12ml from PerfumersWorld,PerfumersWorld,Not Found,,0.28,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BOTAM12M
+BOTAM12M,Amber Glass Bottles 12ml from PerfumersWorld,PerfumersWorld,Not Found,,0.90,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BOTAM12M
+BOTAMB30,Amber Glass Bottles 30ml from PerfumersWorld,PerfumersWorld,Not Found,,2.40,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BOTAMB30
+BOTAMB05,Amber Glass Bottles 5ml from PerfumersWorld,PerfumersWorld,Not Found,,0.90,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BOTAMB05
+BOTAMB60,Amber Glass Bottles 60ml from PerfumersWorld,PerfumersWorld,Not Found,,2.40,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BOTAMB60
+6VU09627,Amber Solid from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.28,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6VU09627
 6UY18081,AMBERGRIS F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6UY18081
 6UY09424,Ambergris Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.22,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6UY09424
 4WW16862,Amberketal IPM from PerfumersWorld,PerfumersWorld,57345-19-4,,1.82,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4WW16862
@@ -135,7 +143,8 @@ BOTAM12M,Amber Glass Bottles 12ml from PerfumersWorld,PerfumersWorld,Not Found,,
 1UW00036,Ambroxan from PerfumersWorld,PerfumersWorld,6790-58-5,,2.52,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=1UW00036
 5UW07540,Ambroxan 10% in DPG from PerfumersWorld,PerfumersWorld,"6790-58-5|0.1
 25265-71-8|0.9",,0.37,,TRUE,Ambroxan from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.1,https://www.perfumersworld.com/view.php?pro_id=5UW07540
-3JJ00005,Amyl Cinnamic Aldehyde (ACA) from PerfumersWorld,PerfumersWorld,122-40-7,,0.14,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3JJ00005
+3JJ00005,Amyl Cinnamic Aldehyde (ACA) from PerfumersWorld,PerfumersWorld,122-40-7,,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3JJ00005
+3OH00037,Amyl Salicylate from PerfumersWorld,PerfumersWorld,2050-08-0,,0.14,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3OH00037
 4FD06346,Amyl Valerate from PerfumersWorld,PerfumersWorld,2173-56-0,,0.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4FD06346
 7WX00917,Amyris Essential Oil from PerfumersWorld,PerfumersWorld,8015-65-4,,0.82,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7WX00917
 4SB00038,Anethole from PerfumersWorld,PerfumersWorld,4180-23-8,,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4SB00038
@@ -147,7 +156,7 @@ BOTAM12M,Amber Glass Bottles 12ml from PerfumersWorld,PerfumersWorld,Not Found,,
 3NL00044,Anisyl Alcohol from PerfumersWorld,PerfumersWorld,105-13-5,,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3NL00044
 7WY10413,Anthopogen Essential Oil from PerfumersWorld,PerfumersWorld,116-26-7,,1.80,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7WY10413
 SHAMPADD,Anti-dandruff Shampoo Base - unscented from PerfumersWorld,PerfumersWorld,Not Found,,0.04,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SHAMPADD
-4WF06853,Aphermate from PerfumersWorld,PerfumersWorld,Not Found,,0.80,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4WF06853
+4WF06853,Aphermate from PerfumersWorld,PerfumersWorld,25225-08-5,,0.80,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4WF06853
 6FG18856,APPLE F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.16,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6FG18856
 6FG07793,Apple Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.22,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6FG07793
 6FG08058,Apple Green from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.15,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6FG08058
@@ -170,9 +179,12 @@ SHAMPADD,Anti-dandruff Shampoo Base - unscented from PerfumersWorld,PerfumersWor
 4WR00045,Bacdanol from PerfumersWorld,PerfumersWorld,28219-61-6,,0.29,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4WR00045
 6FD18188,BANANA F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.15,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6FD18188
 6FD09062,Banana Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.26,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6FD09062
-WSBKFOU1,Bangkok 1-week Foundation Plus Workshop(English) from PerfumersWorld,PerfumersWorld,Not Found,,0.38,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=WSBKFOU1
+WSBKFOU1,Bangkok 1-week Foundation Plus Workshop(English) from PerfumersWorld,PerfumersWorld,Not Found,,1450.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=WSBKFOU1
+WSBKPRO2,Bangkok 2-weeks Professional Level Workshop(English) from PerfumersWorld,PerfumersWorld,Not Found,,2900.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=WSBKPRO2
+WSBKALL3,Bangkok 3-weeks Foundation &amp; Pro Workshops(English) from PerfumersWorld,PerfumersWorld,Not Found,,3950.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=WSBKALL3
+6PS18638,BASIL F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.38,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6PS18638
 6PS12413,Basil Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.18,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6PS12413
-7PL24627,Basil Linalool Oil Egypt from PerfumersWorld,PerfumersWorld,Not Found,,0.30,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7PL24627
+7PL24627,Basil Linalool Oil Egypt from PerfumersWorld,PerfumersWorld,8015-73-4,,0.30,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7PL24627
 7SP00048,Bay West Indies Essential Oil from PerfumersWorld,PerfumersWorld,85085-61-6,,1.30,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7SP00048
 5SP07871,Bay West Indies Essential Oil 10% in DPG from PerfumersWorld,PerfumersWorld,"85085-61-6|0.1
 25265-71-8|0.9",,0.15,,TRUE,Bay West Indies Essential Oil from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.1,https://www.perfumersworld.com/view.php?pro_id=5SP07871
@@ -288,7 +300,7 @@ BON06021,Bonding Factor from PerfumersWorld,PerfumersWorld,Not Found,,0.52,,FALS
 25265-71-8|0.9",,0.42,,TRUE,Cardamom Essential Oil from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.1,https://www.perfumersworld.com/view.php?pro_id=5SC07859
 6SC09679,Cardamom Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.86,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6SC09679
 6SC18557,CARDAMON F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.60,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6SC18557
-8FY24655,Caribbean Rum Extract from PerfumersWorld,PerfumersWorld,Not Found,,8.80,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=8FY24655
+8FY24655,Caribbean Rum Extract from PerfumersWorld,PerfumersWorld,91770-72-8,,8.80,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=8FY24655
 6SP18441,CARNATION F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.22,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6SP18441
 6SP09163,Carnation Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.22,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6SP09163
 7IS00086,Carrot Seed Essential Oil from PerfumersWorld,PerfumersWorld,8015-88-1,,4.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7IS00086
@@ -353,7 +365,9 @@ BON06021,Bonding Factor from PerfumersWorld,PerfumersWorld,Not Found,,0.52,,FALS
 2SV00105,Cinnamyl Alcohol from PerfumersWorld,PerfumersWorld,104-54-1,,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=2SV00105
 5SV07857,Cinnamyl Alcohol 50% in DPG from PerfumersWorld,PerfumersWorld,"104-54-1|0.5
 25265-71-8|0.5",,0.12,,TRUE,Cinnamyl Alcohol from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.5,https://www.perfumersworld.com/view.php?pro_id=5SV07857
-4SV00106,Cinnamyl Aldehyde from PerfumersWorld,PerfumersWorld,104-55-2,,0.05,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4SV00106
+4SV00106,Cinnamyl Aldehyde from PerfumersWorld,PerfumersWorld,104-55-2,,0.13,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4SV00106
+5SV10991,Cinnamyl aldehyde 10% in DPG from PerfumersWorld,PerfumersWorld,"104-55-2|0.1
+25265-71-8|0.9",,0.05,,TRUE,Cinnamyl aldehyde from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.1,https://www.perfumersworld.com/view.php?pro_id=5SV10991
 4SW23710,Cinnamyl Nitrile from PerfumersWorld,PerfumersWorld,4360-47-8,,0.40,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4SW23710
 4GL00225,cis-3 Hexenol from PerfumersWorld,PerfumersWorld,928-96-1,,0.48,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4GL00225
 5GG07890,cis-3 Hexenol 10% in DPG from PerfumersWorld,PerfumersWorld,"928-96-1|0.1
@@ -437,8 +451,10 @@ BON06021,Bonding Factor from PerfumersWorld,PerfumersWorld,Not Found,,0.52,,FALS
 6FY08507,Cognac Wine Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6FY08507
 6CL18897,COLOGNE F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.22,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6CL18897
 6CL10405,Cologne Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.24,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6CL10405
-CLKIT3,Colour Kit from PerfumersWorld,PerfumersWorld,Not Found,,0.45,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=CLKIT3
-CONS12MT,Consultant Perfumer Service from PerfumersWorld,PerfumersWorld,Not Found,,0.90,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=CONS12MT
+CLKIT3,Colour Kit from PerfumersWorld,PerfumersWorld,Not Found,,29.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=CLKIT3
+3KK00124,Coniferan from PerfumersWorld,PerfumersWorld,67874-72-0,,0.45,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3KK00124
+CONS12MT,Consultant Perfumer Service from PerfumersWorld,PerfumersWorld,Not Found,,10000.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=CONS12MT
+7SL00125,Coriander Essential Oil from PerfumersWorld,PerfumersWorld,8008-52-4,,0.90,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7SL00125
 5SL08473,Coriander Essential Oil 10% in DPG from PerfumersWorld,PerfumersWorld,"8008-52-4|0.1
 25265-71-8|0.9",,0.24,,TRUE,Coriander Essential Oil from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.1,https://www.perfumersworld.com/view.php?pro_id=5SL08473
 7BB00832,Cornmint Essential Oil China from PerfumersWorld,PerfumersWorld,68917-18-0,,0.27,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7BB00832
@@ -458,7 +474,8 @@ CONS12MT,Consultant Perfumer Service from PerfumersWorld,PerfumersWorld,Not Foun
 77-93-0|0.99",,0.08,,TRUE,Cumin Seed Essential Oil from PerfumersWorld,Triethyl Citrate (TEC) from PerfumersWorld,0.01,https://www.perfumersworld.com/view.php?pro_id=5SU19106
 5SU18711,Cumin Seed Essential Oil 10% in TEC from PerfumersWorld,PerfumersWorld,"8014-13-9|0.1
 77-93-0|0.9",,0.15,,TRUE,Cumin Seed Essential Oil from PerfumersWorld,Triethyl Citrate (TEC) from PerfumersWorld,0.1,https://www.perfumersworld.com/view.php?pro_id=5SU18711
-CUSTOMPC,Custom Signature Perfume Creation from PerfumersWorld,PerfumersWorld,Not Found,,0.34,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=CUSTOMPC
+CUSTOMPC,Custom Signature Perfume Creation from PerfumersWorld,PerfumersWorld,Not Found,,600.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=CUSTOMPC
+3MG00134,Cyclamen Aldehyde from PerfumersWorld,PerfumersWorld,103-95-7,,0.34,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3MG00134
 6ML18413,CYCLAMEN F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.18,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6ML18413
 6MG09430,Cyclamen Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.19,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6MG09430
 4PQ00352,Cymene Para from PerfumersWorld,PerfumersWorld,99-87-6,,0.14,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4PQ00352
@@ -468,7 +485,9 @@ CUSTOMPC,Custom Signature Perfume Creation from PerfumersWorld,PerfumersWorld,No
 6DF18006,D-DAIRY F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.12,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6DF18006
 6DD08537,D-Dairy Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6DD08537
 3CQ00276,D-Limonene from PerfumersWorld,PerfumersWorld,5989-27-5,,0.08,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3CQ00276
-9IF07120,Damascenone from PerfumersWorld,PerfumersWorld,23696-85-7,,5.10,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=9IF07120
+9IF07120,Damascenone from PerfumersWorld,PerfumersWorld,23696-85-7,,2.72,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=9IF07120
+3IL00139,Damascol from PerfumersWorld,PerfumersWorld,4927-36-0,,0.66,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3IL00139
+7HH00895,Davana Essential Oil from PerfumersWorld,PerfumersWorld,91844-86-9,,5.10,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7HH00895
 5HH12466,Davana Essential Oil 10% in DPG from PerfumersWorld,PerfumersWorld,"8016-03-3|0.1
 25265-71-8|0.9",,0.52,,TRUE,Davana Essential Oil from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.1,https://www.perfumersworld.com/view.php?pro_id=5HH12466
 3AC00014,Decanol (Alcohol C-10) from PerfumersWorld,PerfumersWorld,112-30-1,,0.12,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3AC00014
@@ -489,7 +508,7 @@ CUSTOMPC,Custom Signature Perfume Creation from PerfumersWorld,PerfumersWorld,No
 4JN00149,Dihydro Jasmone from PerfumersWorld,PerfumersWorld,1128-08-1,,0.90,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4JN00149
 5JN10948,Dihydro Jasmone 10% in DPG from PerfumersWorld,PerfumersWorld,"1128-08-1|0.1
 25265-71-8|0.9",,0.12,,TRUE,Dihydro Jasmone from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.1,https://www.perfumersworld.com/view.php?pro_id=5JN10948
-3LC03808,Dihydro Linalool from PerfumersWorld,PerfumersWorld,Not Found,,0.50,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3LC03808
+3LC03808,Dihydro Linalool from PerfumersWorld,PerfumersWorld,18479-51-1,,0.50,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3LC03808
 3CK00150,Dihydro Myrcenol from PerfumersWorld,PerfumersWorld,18479-58-8,,0.12,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3CK00150
 3KL00152,Dihydro Terpinyl Acetate from PerfumersWorld,PerfumersWorld,80-25-1,,0.30,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3KL00152
 7HH07671,Dill Essential Oil from PerfumersWorld,PerfumersWorld,8006-75-5,,0.67,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7HH07671
@@ -574,7 +593,10 @@ CUSTOMPC,Custom Signature Perfume Creation from PerfumersWorld,PerfumersWorld,No
 25265-71-8|0.5",,0.84,,TRUE,Exaltolide Pentadecanolide from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.5,https://www.perfumersworld.com/view.php?pro_id=5XX08283
 6FD10042,F-Fruit Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6FD10042
 6FD18011,F-FRUITY F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.12,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6FD18011
-F-TEC-10,F-TEC Custom Creation 10cc Travelling Set from PerfumersWorld,PerfumersWorld,Not Found,,1.35,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=F-TEC-10
+F-TEC-10,F-TEC Custom Creation 10cc Travelling Set from PerfumersWorld,PerfumersWorld,Not Found,,695.10,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=F-TEC-10
+F-TEC-30,F-TEC Custom Creation 30cc Compact Display Set from PerfumersWorld,PerfumersWorld,Not Found,,1595.30,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=F-TEC-30
+F-TEC-60,F-TEC Custom Creation 60cc Set-Full Size Display Kit from PerfumersWorld,PerfumersWorld,Not Found,,2995.60,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=F-TEC-60
+3LW00187,Farnesol from PerfumersWorld,PerfumersWorld,4602-84-0,,1.35,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3LW00187
 FEM06032,Female Concentrate from PerfumersWorld,PerfumersWorld,Not Found,,5.02,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FEM06032
 FEM06033,Female Factor from PerfumersWorld,PerfumersWorld,Not Found,,0.52,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FEM06033
 7SB00189,Fennel Sweet Essential Oil from PerfumersWorld,PerfumersWorld,8006-84-6,,0.79,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7SB00189
@@ -592,7 +614,9 @@ FEM06033,Female Factor from PerfumersWorld,PerfumersWorld,Not Found,,0.52,,FALSE
 6JV10408,Flower Bouquet Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6JV10408
 6YG18317,FOUGERE VERT F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.22,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6YG18317
 6YG10384,Fougere Vert Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.21,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6YG10384
-FCOLINEF,FOUNDATION COURSE ONLINE from PerfumersWorld,PerfumersWorld,Not Found,,0.12,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FCOLINEF
+FCOLINEF,FOUNDATION COURSE ONLINE from PerfumersWorld,PerfumersWorld,Not Found,,0.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FCOLINEF
+FCOKIT26,FOUNDATION COURSE ONLINE WITH THE PERFUMERY TRAINING KIT K26. from PerfumersWorld,PerfumersWorld,Not Found,,229.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FCOKIT26
+6EJ18929,FRAGRANT RICE F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.12,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6EJ18929
 6EJ20524,Fragrant Rice Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6EJ20524
 8ON00534,Frangipani Absolute from PerfumersWorld,PerfumersWorld,94350-02-4,,13.02,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=8ON00534
 5ON09236,Frangipani Absolute 10% in DPG from PerfumersWorld,PerfumersWorld,"223748-06-9|0.1
@@ -641,7 +665,11 @@ FCOLINEF,FOUNDATION COURSE ONLINE from PerfumersWorld,PerfumersWorld,Not Found,,
 25265-71-8|0.9",,0.08,,TRUE,Gamma Octalactone from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.1,https://www.perfumersworld.com/view.php?pro_id=5DV08651
 6ND18759,GARDENIA F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.18,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6ND18759
 6ND09094,Gardenia Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6ND09094
-GCMS2RUN,GCMS Analysis and Interpretation from PerfumersWorld,PerfumersWorld,Not Found,,1.39,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=GCMS2RUN
+GCMS2RUN,GCMS Analysis and Interpretation from PerfumersWorld,PerfumersWorld,Not Found,,600.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=GCMS2RUN
+GCMSSELF,GCMS Analysis DIY Interpretation from PerfumersWorld,PerfumersWorld,Not Found,,300.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=GCMSSELF
+GCMSRUSH,GCMS Analysis Rush Service from PerfumersWorld,PerfumersWorld,Not Found,,105.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=GCMSRUSH
+5YW13682,Geosmin 1% in DPG from PerfumersWorld,PerfumersWorld,"23333-91-7|0.01
+25265-71-8|0.99",,1.39,,TRUE,Geosmin from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.01,https://www.perfumersworld.com/view.php?pro_id=5YW13682
 5YW18061,Geosmin 1% in TEC from PerfumersWorld,PerfumersWorld,"23333-91-7|0.01
 77-93-0|0.99",,1.42,,TRUE,Geosmin from PerfumersWorld,Triethyl Citrate (TEC) from PerfumersWorld,0.01,https://www.perfumersworld.com/view.php?pro_id=5YW18061
 3RL00204,Geraniol from PerfumersWorld,PerfumersWorld,106-24-1,,0.12,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3RL00204
@@ -649,7 +677,7 @@ GCMS2RUN,GCMS Analysis and Interpretation from PerfumersWorld,PerfumersWorld,Not
 7RB00205,Geranium Essential Oil from PerfumersWorld,PerfumersWorld,8000-46-2,,0.62,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7RB00205
 6RB18440,GERANIUM F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.30,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6RB18440
 6RB07924,Geranium Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.28,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6RB07924
-7RB00837,Geranium Oil Egypt from PerfumersWorld,PerfumersWorld,Not Found,,0.50,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7RB00837
+7RB00837,Geranium Oil Egypt from PerfumersWorld,PerfumersWorld,8000-46-2,,0.50,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7RB00837
 3RL00206,Geranyl Acetate from PerfumersWorld,PerfumersWorld,105-87-3,,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3RL00206
 4RD00207,Geranyl Butyrate from PerfumersWorld,PerfumersWorld,106-29-6,,0.81,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4RD00207
 4RW00208,Geranyl Formate from PerfumersWorld,PerfumersWorld,105-86-2,,0.30,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4RW00208
@@ -711,7 +739,7 @@ HANDLOTN,Hand Lotion Base - unscented from PerfumersWorld,PerfumersWorld,Not Fou
 4FG01284,Hexyl Acetate from PerfumersWorld,PerfumersWorld,142-92-7,,0.12,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4FG01284
 3JJ00217,Hexyl Cinnamic Aldehyde (HCA) from PerfumersWorld,PerfumersWorld,101-86-0,,0.10,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3JJ00217
 3OG00230,Hexyl Salicylate from PerfumersWorld,PerfumersWorld,6259-76-3,,0.09,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3OG00230
-4WX24656,Hindinol from PerfumersWorld,PerfumersWorld,Not Found,,0.39,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4WX24656
+4WX24656,Hindinol from PerfumersWorld,PerfumersWorld,28219-60-5,,0.39,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4WX24656
 7LB07762,Ho Essential Oil from PerfumersWorld,PerfumersWorld,8022-91-1,,0.29,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7LB07762
 7HS08359,Holy Basil Essential Oil from PerfumersWorld,PerfumersWorld,91845-35-1,,0.84,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7HS08359
 6PF18597,HONEY F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.15,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6PF18597
@@ -778,7 +806,7 @@ HANDLOTN,Hand Lotion Base - unscented from PerfumersWorld,PerfumersWorld,Not Fou
 4WX10027,Javanol from PerfumersWorld,PerfumersWorld,198404-98-7,,2.16,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4WX10027
 3JN00258,Jessemal Jasmonyl from PerfumersWorld,PerfumersWorld,18871-14-2,,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3JN00258
 0ZA01456,Jojoba Oil - Fixed Oil from PerfumersWorld,PerfumersWorld,90045-98-0,,0.25,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=0ZA01456
-7SL24626,Jungle Pepper Oil from PerfumersWorld,PerfumersWorld,Not Found,,4.10,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7SL24626
+7SL24626,Jungle Pepper Oil from PerfumersWorld,PerfumersWorld,102242-62-6,,4.10,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7SL24626
 7KH00262,Juniper Berry Essential Oil from PerfumersWorld,PerfumersWorld,8012-91-7,,2.80,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7KH00262
 5KH07869,Juniper Berry Essential Oil 10% in DPG from PerfumersWorld,PerfumersWorld,"8012-91-7|0.1
 25265-71-8|0.9",,0.35,,TRUE,Juniper Berry Essential Oil from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.1,https://www.perfumersworld.com/view.php?pro_id=5KH07869
@@ -786,11 +814,12 @@ HANDLOTN,Hand Lotion Base - unscented from PerfumersWorld,PerfumersWorld,Not Fou
 6KL11970,K-Konifer Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6KL11970
 4WU16857,Karanal from PerfumersWorld,PerfumersWorld,117933-89-8,,0.87,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4WU16857
 4WY07089,Kephalis from PerfumersWorld,PerfumersWorld,36306-87-3,,0.57,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4WY07089
-7CK24631,Key Lime Oil Egypt from PerfumersWorld,PerfumersWorld,Not Found,,0.25,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7CK24631
+7CK24631,Key Lime Oil Egypt from PerfumersWorld,PerfumersWorld,8008-26-2,,0.25,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7CK24631
 4WI10591,Koavone from PerfumersWorld,PerfumersWorld,81786-73-4,,0.18,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4WI10591
 4BB00088,L-Carvone from PerfumersWorld,PerfumersWorld,99-49-0,,0.22,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4BB00088
 6LL00487,L-Linalool Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6LL00487
-LABKIT01,Lab Essentials Starter Set from PerfumersWorld,PerfumersWorld,Not Found,,1.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=LABKIT01
+LABKIT01,Lab Essentials Starter Set from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=LABKIT01
+8UQ08219,Labdanum Absolute from PerfumersWorld,PerfumersWorld,8016-26-0,,1.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=8UQ08219
 5UQ07791,Labdanum Absolute 10% in DPG from PerfumersWorld,PerfumersWorld,"8016-26-0|0.1
 25265-71-8|0.9",,0.18,,TRUE,Labdanum Absolute from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.1,https://www.perfumersworld.com/view.php?pro_id=5UQ07791
 6UH18500,LABDANUM F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.32,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6UH18500
@@ -948,7 +977,10 @@ SHAMPBBY,Mild Baby Shampoo Base - unscented from PerfumersWorld,PerfumersWorld,N
 25265-71-8|0.9",,0.75,,TRUE,Mimosa Absolute from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.1,https://www.perfumersworld.com/view.php?pro_id=5NG07850
 6NN18760,MIMOSA F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.22,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6NN18760
 6NN09420,Mimosa Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6NN09420
-MINISCAL,Mini Digital Scale from PerfumersWorld,PerfumersWorld,Not Found,,4.50,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=MINISCAL
+MINISCAL,Mini Digital Scale from PerfumersWorld,PerfumersWorld,Not Found,,29.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=MINISCAL
+MINISNIF,Mini Sniff Smelling Strips from PerfumersWorld,PerfumersWorld,Not Found,,1.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=MINISNIF
+MIXPOT50,Mixing Pots (Pack of 50) from PerfumersWorld,PerfumersWorld,Not Found,,7.50,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=MIXPOT50
+4XU05022,Muscone from PerfumersWorld,PerfumersWorld,541-91-3,,4.50,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4XU05022
 6YE18885,MUSHROOM F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.50,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6YE18885
 6YE09107,Mushroom Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.22,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6YE09107
 2XA09558,Musk Concentrate from PerfumersWorld,PerfumersWorld,1222-05-5,,0.19,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=2XA09558
@@ -975,7 +1007,7 @@ MINISCAL,Mini Digital Scale from PerfumersWorld,PerfumersWorld,Not Found,,4.50,,
 6GW18223,NATURELLE HOMME F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.27,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6GW18223
 6GG10387,Naturelle Homme Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.50,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6GG10387
 4GI02379,Neofolione from PerfumersWorld,PerfumersWorld,111-79-5,,0.75,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4GI02379
-8CS23654,Nepal Pepper Co2 Extract from PerfumersWorld,PerfumersWorld,Not Found,,4.40,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=8CS23654
+8CS23654,Nepal Pepper Co2 Extract from PerfumersWorld,PerfumersWorld,97404-53-0,,4.40,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=8CS23654
 3CR00317,Nerol from PerfumersWorld,PerfumersWorld,106-25-2,,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3CR00317
 7CN00318,Neroli Essential Oil from PerfumersWorld,PerfumersWorld,8016-38-4,,20.80,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7CN00318
 5CN07545,Neroli Essential Oil 10% in DPG from PerfumersWorld,PerfumersWorld,"8016-38-4|0.1
@@ -992,7 +1024,9 @@ MINISCAL,Mini Digital Scale from PerfumersWorld,PerfumersWorld,Not Found,,4.50,,
 3RF05061,Neryl Acetate from PerfumersWorld,PerfumersWorld,141-12-8,,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3RF05061
 6VD18542,NEW MOWN HAY F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.15,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6VD18542
 6VD09091,New Mown Hay Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6VD09091
-WSNZ1806,New Zealand 1-week Foundation Plus Workshop from PerfumersWorld,PerfumersWorld,Not Found,,0.47,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=WSNZ1806
+WSNZ1806,New Zealand 1-week Foundation Plus Workshop from PerfumersWorld,PerfumersWorld,Not Found,,2242.50,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=WSNZ1806
+WSNZ1807,New Zealand 1-week Foundation Plus Workshop from PerfumersWorld,PerfumersWorld,Not Found,,2242.50,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=WSNZ1807
+7BH07692,Niaouli essential oil from PerfumersWorld,PerfumersWorld,8022-72-8,,0.47,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7BH07692
 6XU18880,NITRO MUSK F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.12,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6XU18880
 6XU09117,Nitro Musk Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.14,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6XU09117
 3LA00326,Nopyl Acetate from PerfumersWorld,PerfumersWorld,128-51-8,,0.14,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3LA00326
@@ -1055,7 +1089,8 @@ WSNZ1806,New Zealand 1-week Foundation Plus Workshop from PerfumersWorld,Perfume
 7HL10443,Organic Lavender Essential Oil from PerfumersWorld,PerfumersWorld,90063-37-9,,0.67,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7HL10443
 6QV18436,ORIENTAL F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.26,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6QV18436
 6QV10404,Oriental Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.28,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6QV10404
-3IA00343,Orivone from PerfumersWorld,PerfumersWorld,16587-71-6,,21.50,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3IA00343
+3IA00343,Orivone from PerfumersWorld,PerfumersWorld,16587-71-6,,0.52,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3IA00343
+8IA00344,Orris Concrete Orris Butter from PerfumersWorld,PerfumersWorld,8002-73-1,,21.50,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=8IA00344
 5IA07847,Orris Concrete Orris Butter 10% in DPG from PerfumersWorld,PerfumersWorld,"8002-73-1|0.1
 25265-71-8|0.9",,2.20,,TRUE,Orris Concrete Orris Butter from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.1,https://www.perfumersworld.com/view.php?pro_id=5IA07847
 6IA18245,ORRIS F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.25,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6IA18245
@@ -1097,7 +1132,7 @@ WSNZ1806,New Zealand 1-week Foundation Plus Workshop from PerfumersWorld,Perfume
 7WB00357,Patchouli Essential Oil from PerfumersWorld,PerfumersWorld,84238-39-1,,0.96,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7WB00357
 6WB18685,PATCHOULI F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.45,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6WB18685
 6WB09123,Patchouli Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.50,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6WB09123
-7WB13670,Patchouli Light Essential Oil from PerfumersWorld,PerfumersWorld,Not Found,,0.35,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7WB13670
+7WB13670,Patchouli Light Essential Oil from PerfumersWorld,PerfumersWorld,8014-09-3,,0.35,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7WB13670
 6FD18170,PEACH F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.15,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6FD18170
 6FD08610,Peach Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6FD08610
 3RB12753,Peonile from PerfumersWorld,PerfumersWorld,10461-98-0,,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3RB12753
@@ -1153,7 +1188,20 @@ WSNZ1806,New Zealand 1-week Foundation Plus Workshop from PerfumersWorld,Perfume
 6AJ12410,Powdery Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.19,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6AJ12410
 3MC11054,Precyclemone B from PerfumersWorld,PerfumersWorld,52474-60-9,,0.25,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3MC11054
 3FG00387,Prenyl Acetate from PerfumersWorld,PerfumersWorld,1191-16-8,,0.12,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3FG00387
-STRIP14C,Professional 14cm Smelling Strips from PerfumersWorld,PerfumersWorld,Not Found,,0.06,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=STRIP14C
+STRIP14C,Professional 14cm Smelling Strips from PerfumersWorld,PerfumersWorld,Not Found,,1.50,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=STRIP14C
+PRONO-RM,PROFESSIONAL COURSE ONLINE (FULL 10 UNITS - NO MATERIALS) from PerfumersWorld,PerfumersWorld,Not Found,,1190.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=PRONO-RM
+PRO1FULL,PROFESSIONAL COURSE ONLINE (FULL 10 UNITS inc. 160+ RM Kit) from PerfumersWorld,PerfumersWorld,Not Found,,1550.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=PRO1FULL
+PROPAY11,PROFESSIONAL COURSE ONLINE UNIT 11 from PerfumersWorld,PerfumersWorld,Not Found,,229.11,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=PROPAY11
+PROPAY12,PROFESSIONAL COURSE ONLINE UNIT 12 from PerfumersWorld,PerfumersWorld,Not Found,,229.12,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=PROPAY12
+PROPAY13,PROFESSIONAL COURSE ONLINE UNIT 13 from PerfumersWorld,PerfumersWorld,Not Found,,229.13,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=PROPAY13
+PROPAY14,PROFESSIONAL COURSE ONLINE UNIT 14 from PerfumersWorld,PerfumersWorld,Not Found,,229.14,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=PROPAY14
+PROPAY15,PROFESSIONAL COURSE ONLINE UNIT 15 from PerfumersWorld,PerfumersWorld,Not Found,,229.15,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=PROPAY15
+PROPAY16,PROFESSIONAL COURSE ONLINE UNIT 16 from PerfumersWorld,PerfumersWorld,Not Found,,229.16,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=PROPAY16
+PROPAY17,PROFESSIONAL COURSE ONLINE UNIT 17 from PerfumersWorld,PerfumersWorld,Not Found,,229.17,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=PROPAY17
+PROPAY18,PROFESSIONAL COURSE ONLINE UNIT 18 from PerfumersWorld,PerfumersWorld,Not Found,,229.18,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=PROPAY18
+PROPAY19,PROFESSIONAL COURSE ONLINE UNIT 19 from PerfumersWorld,PerfumersWorld,Not Found,,229.19,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=PROPAY19
+PROPAY20,PROFESSIONAL COURSE ONLINE UNIT 20 from PerfumersWorld,PerfumersWorld,Not Found,,229.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=PROPAY20
+0ZP00365,Propylene Glycol (PG) from PerfumersWorld,PerfumersWorld,57-55-6,,0.06,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=0ZP00365
 6FD18956,PRUNE F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.15,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6FD18956
 6FD07547,Prune Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.14,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6FD07547
 6XZ10738,PWx Factor from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.62,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6XZ10738
@@ -1171,7 +1219,8 @@ STRIP14C,Professional 14cm Smelling Strips from PerfumersWorld,PerfumersWorld,No
 5FL07524,Raspberry Ketone 10% in DPG from PerfumersWorld,PerfumersWorld,"5471-51-2|0.1
 25265-71-8|0.9",,0.09,,TRUE,Raspberry Ketone from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.1,https://www.perfumersworld.com/view.php?pro_id=5FL07524
 5ES18560,Red Saffron Infusion from PerfumersWorld,PerfumersWorld,8022-19-3,,2.02,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=5ES18560
-GCMSCOPY,Reproduce my Perfume Sample from GCMS from PerfumersWorld,PerfumersWorld,Not Found,,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=GCMSCOPY
+GCMSCOPY,Reproduce my Perfume Sample from GCMS from PerfumersWorld,PerfumersWorld,Not Found,,699.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=GCMSCOPY
+3RB07724,Rhodinol ex Citronella from PerfumersWorld,PerfumersWorld,68916-43-8,,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3RB07724
 7RB23711,Rhodinol Ex-Natural from PerfumersWorld,PerfumersWorld,6812-78-8,,1.50,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7RB23711
 3FL06757,Rhubofix from PerfumersWorld,PerfumersWorld,41816-03-9,,1.90,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3FL06757
 0ZA01442,Rice Bran Oil - Fixed Oil from PerfumersWorld,PerfumersWorld,68553-81-1,,0.07,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=0ZA01442
@@ -1227,7 +1276,28 @@ GCMSCOPY,Reproduce my Perfume Sample from GCMS from PerfumersWorld,PerfumersWorl
 5ES09556,Safranal 1% in DPG from PerfumersWorld,PerfumersWorld,"116-26-7|0.01
 25265-71-8|0.99",,0.12,,TRUE,Safranal from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.01,https://www.perfumersworld.com/view.php?pro_id=5ES09556
 7HP00403,Sage Dalmation Essential Oil from PerfumersWorld,PerfumersWorld,8022-56-8,,0.80,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7HP00403
-GCMSEXTR,Sample Extraction for GCMS Analysis from PerfumersWorld,PerfumersWorld,Not Found,,0.22,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=GCMSEXTR
+GCMSEXTR,Sample Extraction for GCMS Analysis from PerfumersWorld,PerfumersWorld,Not Found,,102.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=GCMSEXTR
+SAMPLS01,Sample Set No.01 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS01
+SAMPLS02,Sample Set No.02 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS02
+SAMPLS03,Sample Set No.03 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS03
+SAMPLS04,Sample Set No.04 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS04
+SAMPLS05,Sample Set No.05 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS05
+SAMPLS06,Sample Set No.06 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS06
+SAMPLS07,Sample Set No.07 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS07
+SAMPLS08,Sample Set No.08 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS08
+SAMPLS09,Sample Set No.09 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS09
+SAMPLS10,Sample Set No.10 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS10
+SAMPLS11,Sample Set No.11 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS11
+SAMPLS12,Sample Set No.12 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS12
+SAMPLS13,Sample Set No.13 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS13
+SAMPLS14,Sample Set No.14 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS14
+SAMPLS15,Sample Set No.15 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS15
+SAMPLS16,Sample Set No.16 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS16
+SAMPLS17,Sample Set No.17 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS17
+SAMPLS18,Sample Set No.18 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS18
+SAMPLS19,Sample Set No.19 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS19
+SAMPLS20,Sample Set No.20 The Perfumer&#39;s Formulation Bulletin from PerfumersWorld,PerfumersWorld,Not Found,,56.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=SAMPLS20
+4WX00405,Sandalore from PerfumersWorld,PerfumersWorld,65113-99-7,,0.22,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4WX00405
 6WX07911,Sandalwood Base from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,2.22,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6WX07911
 6WX24054,Sandalwood Base X3 from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.27,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6WX24054
 7WX00406,Sandalwood Essential Oil from PerfumersWorld,PerfumersWorld,84787-70-2,,6.52,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7WX00406
@@ -1236,7 +1306,7 @@ GCMSEXTR,Sample Extraction for GCMS Analysis from PerfumersWorld,PerfumersWorld,
 6WX09344,Sandalwood Extra 208 from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.94,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6WX09344
 6WX18686,SANDALWOOD F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.30,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6WX18686
 6WX12457,Sandalwood Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.39,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6WX12457
-7WX21054,Sandalwood Oil S.album from PerfumersWorld,PerfumersWorld,Not Found,,7.30,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7WX21054
+7WX21054,Sandalwood Oil S.album from PerfumersWorld,PerfumersWorld,8006-87-9,,7.30,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7WX21054
 7WX21055,Sandalwood Oil S.spicatum from PerfumersWorld,PerfumersWorld,8024-35-9,,3.80,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7WX21055
 3WX00407,Sandela 50 from PerfumersWorld,PerfumersWorld,Mixture,,0.18,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3WX00407
 3WX13005,Sandela 85 from PerfumersWorld,PerfumersWorld,Mixture,,0.22,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3WX13005
@@ -1259,7 +1329,7 @@ SOAPWHIT,Soap White Glycerine - unscented from PerfumersWorld,PerfumersWorld,Not
 0ZS07781,Solubilizer Extra Clear from PerfumersWorld,PerfumersWorld,Mixture,,0.19,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=0ZS07781
 0ZS07626,Solubilizer PWS from PerfumersWorld,PerfumersWorld,Mixture,,0.07,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=0ZS07626
 7HB00404,Spanish Sage Essential Oil from PerfumersWorld,PerfumersWorld,8016-65-7,,0.79,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7HB00404
-7BB00414,Spearmint Essential Oil from PerfumersWorld,PerfumersWorld,Not Found,,0.35,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7BB00414
+7BB00414,Spearmint Essential Oil from PerfumersWorld,PerfumersWorld,8008-79-5,,0.35,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=7BB00414
 5BB11414,Spearmint Essential Oil 10% in DPG from PerfumersWorld,PerfumersWorld,"8008-79-5|0.1
 25265-71-8|0.9",,0.07,,TRUE,Spearmint Essential Oil from PerfumersWorld,Dipropylene Glycol (DPG) from PerfumersWorld,0.1,https://www.perfumersworld.com/view.php?pro_id=5BB11414
 6BG18119,SPEARMINT F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.15,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6BG18119
@@ -1311,7 +1381,64 @@ SOAPWHIT,Soap White Glycerine - unscented from PerfumersWorld,PerfumersWorld,Not
 3LK00432,Terpinyl Acetate from PerfumersWorld,PerfumersWorld,80-26-2,,0.23,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3LK00432
 3RL03873,Tetrahydro Geraniol from PerfumersWorld,PerfumersWorld,106-21-8,,0.66,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3RL03873
 3LM00435,Tetrahydro Muguol from PerfumersWorld,PerfumersWorld,41678-36-8,,0.26,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=3LM00435
-AROMAKIT,The Aromatherapy and Natural Perfumery Training Kit from PerfumersWorld,PerfumersWorld,Not Found,,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=AROMAKIT
+AROMAKIT,The Aromatherapy and Natural Perfumery Training Kit from PerfumersWorld,PerfumersWorld,Not Found,,349.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=AROMAKIT
+PTFTEC26,The F-TEC Perfumery Training Kit from PerfumersWorld,PerfumersWorld,Not Found,,230.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=PTFTEC26
+FTECPW10,The F-TEC&lt;sup&gt;PW&lt;/sup&gt; Pro Perfume Creation System 10cc Explorer Set from PerfumersWorld,PerfumersWorld,Not Found,,1195.10,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FTECPW10
+FTECPW30,The F-TEC&lt;sup&gt;PW&lt;/sup&gt; Pro Perfume Creation System 30cc Compact Set from PerfumersWorld,PerfumersWorld,Not Found,,2095.30,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FTECPW30
+FTECPW60,The F-TEC&lt;sup&gt;PW&lt;/sup&gt; Pro Perfume Creation System 60cc Full-Display Set from PerfumersWorld,PerfumersWorld,Not Found,,3495.60,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FTECPW60
+BULSAM01,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.01 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM01
+BULSAM02,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.02 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM02
+BULSAM03,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.03 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM03
+BULSAM04,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.04 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM04
+BULSAM05,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.05 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM05
+BULSAM06,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.06 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM06
+BULSAM07,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.07 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM07
+BULSAM08,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.08 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM08
+BULSAM09,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.09 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM09
+BULSAM10,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.10 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM10
+BULSAM11,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.11 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM11
+BULSAM12,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.12 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM12
+BULSAM13,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.13 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM13
+BULSAM14,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.14 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM14
+BULSAM15,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.15 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM15
+BULSAM16,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.16 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM16
+BULSAM17,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.17 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM17
+BULSAM18,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.18 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM18
+BULSAM19,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.19 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM19
+BULSAM20,The Perfumer&#39;s Formulation Bulletin &amp; Sample Set No.20 from PerfumersWorld,PerfumersWorld,Not Found,,149.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=BULSAM20
+FORMLB01,The Perfumer&#39;s Formulation Bulletin No.01 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB01
+FORMLB02,The Perfumer&#39;s Formulation Bulletin No.02 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB02
+FORMLB03,The Perfumer&#39;s Formulation Bulletin No.03 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB03
+FORMLB04,The Perfumer&#39;s Formulation Bulletin No.04 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB04
+FORMLB05,The Perfumer&#39;s Formulation Bulletin No.05 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB05
+FORMLB06,The Perfumer&#39;s Formulation Bulletin No.06 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB06
+FORMLB07,The Perfumer&#39;s Formulation Bulletin No.07 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB07
+FORMLB08,The Perfumer&#39;s Formulation Bulletin No.08 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB08
+FORMLB09,The Perfumer&#39;s Formulation Bulletin No.09 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB09
+FORMLB10,The Perfumer&#39;s Formulation Bulletin No.10 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB10
+FORMLB11,The Perfumer&#39;s Formulation Bulletin No.11 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB11
+FORMLB12,The Perfumer&#39;s Formulation Bulletin No.12 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB12
+FORMLB13,The Perfumer&#39;s Formulation Bulletin No.13 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB13
+FORMLB14,The Perfumer&#39;s Formulation Bulletin No.14 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB14
+FORMLB15,The Perfumer&#39;s Formulation Bulletin No.15 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB15
+FORMLB16,The Perfumer&#39;s Formulation Bulletin No.16 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB16
+FORMLB17,The Perfumer&#39;s Formulation Bulletin No.17 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB17
+FORMLB18,The Perfumer&#39;s Formulation Bulletin No.18 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB18
+FORMLB19,The Perfumer&#39;s Formulation Bulletin No.19 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB19
+FORMLB20,The Perfumer&#39;s Formulation Bulletin No.20 from PerfumersWorld,PerfumersWorld,Not Found,,99.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=FORMLB20
+PWSTUDIO,The Perfumer&#39;s Studio from PerfumersWorld,PerfumersWorld,Not Found,,200.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=PWSTUDIO
+TPW11111,The Perfumer&#39;s Wizard Free Access from PerfumersWorld,PerfumersWorld,Not Found,,0.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=TPW11111
+TPW00031,The Perfumer&#39;s Wizard Premium 1 month from PerfumersWorld,PerfumersWorld,Not Found,,15.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=TPW00031
+TPW00008,The Perfumer&#39;s Wizard Premium 1 week from PerfumersWorld,PerfumersWorld,Not Found,,5.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=TPW00008
+TPW00366,The Perfumer&#39;s Wizard Premium 1 year from PerfumersWorld,PerfumersWorld,Not Found,,100.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=TPW00366
+WKBKFREE,The Perfumer&#39;s Workbook (Free Version) from PerfumersWorld,PerfumersWorld,Not Found,,0.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=WKBKFREE
+WKBKPRO9,The Perfumer&#39;s Workbook (Professional Licence) from PerfumersWorld,PerfumersWorld,Not Found,,5000.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=WKBKPRO9
+WKBKSTUP,The Perfumer&#39;s Workbook (Professional Set-Up Service) from PerfumersWorld,PerfumersWorld,Not Found,,1.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=WKBKSTUP
+WKBKREG2,The Perfumer&#39;s Workbook (Registered Version) from PerfumersWorld,PerfumersWorld,Not Found,,159.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=WKBKREG2
+PTKITK26,The Perfumery Training Kit K26 from PerfumersWorld,PerfumersWorld,Not Found,,229.95,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=PTKITK26
+PROACCYR,The Professional Account Package from PerfumersWorld,PerfumersWorld,Not Found,,1000.00,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=PROACCYR
+RMKIT161,The Student&#39;s Raw Material Kit from PerfumersWorld,PerfumersWorld,Not Found,,873.59,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=RMKIT161
+6QZ21000,Thixener X 300 from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6QZ21000
 6PP18420,THYME F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.22,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6PP18420
 6PP12412,Thyme Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.20,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6PP12412
 1PS00442,Thymol from PerfumersWorld,PerfumersWorld,89-83-8,,0.27,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=1PS00442
@@ -1371,7 +1498,8 @@ TRU06029,Truffle Factor from PerfumersWorld,PerfumersWorld,Not Found,,0.52,,FALS
 6UU12452,U-Animal Fleuressence from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.25,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6UU12452
 ULT06030,Ultra-Feminine Concentrate from PerfumersWorld,PerfumersWorld,Not Found,,5.02,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=ULT06030
 ULT06031,Ultra-Feminine Factor from PerfumersWorld,PerfumersWorld,Not Found,,0.52,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=ULT06031
-6II13551,Ultralia from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.25,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6II13551
+6II13551,Ultralia from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.30,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6II13551
+4IG07330,Undecavertol from PerfumersWorld,PerfumersWorld,81782-77-6,,0.25,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=4IG07330
 UNI06026,Unisex Concentrate from PerfumersWorld,PerfumersWorld,Not Found,,5.02,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=UNI06026
 UNI06027,Unisex Factor from PerfumersWorld,PerfumersWorld,Not Found,,0.52,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=UNI06027
 6VW18054,V-VANILLA F-TEC from PerfumersWorld,PerfumersWorld,Mixture (Perfume Base),,0.15,,FALSE,,,,https://www.perfumersworld.com/view.php?pro_id=6VW18054

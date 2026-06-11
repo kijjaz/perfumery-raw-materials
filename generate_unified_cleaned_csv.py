@@ -1,0 +1,443 @@
+import csv
+import re
+import os
+
+# --- Configuration ---
+AUDIT_CSV = 'Perfumery_Raw_Materials_Audit_Master.csv'
+PW_CSV = 'perfumersworld_20260401_updated.csv'
+MSR_CSV = 'myskinrecipes_20260317.csv'
+SSD_CSV = 'simplescentsdiy_20260317.csv'
+OUTPUT_CSV = '🌿 RawMaterials_v0_1_11_Cleaned.csv'
+
+EXCHANGE_RATE_USD_THB = 35.0
+
+SOLVENTS_MAP = {
+    'DPG': 'Dipropylene Glycol (DPG)',
+    'TEC': 'Triethyl Citrate (TEC)',
+    'IPM': 'Isopropyl Myristate (IPM)',
+    'BB': 'Benzyl Benzoate (BB)',
+    'DEP': 'Diethyl Phthalate (DEP)',
+    'PG': 'Propylene Glycol (PG)',
+    'PEA': 'Phenyl Ethyl Alcohol (PEA)',
+    'ETHANOL': 'Ethanol',
+    'ALCOHOL': 'Ethanol'
+}
+
+def clean_cas_formatting(cas_str):
+    if not cas_str:
+        return ""
+    cas_str = cas_str.strip()
+    if cas_str.lower() in ["mixture", "confidential", "not found", "not listed", "mixture (perfume base)", "none"]:
+        return ""
+    # Extract first CAS if multiple are separated by | or newlines
+    normalized = cas_str.replace('\n', '|').replace('\r', '')
+    parts = normalized.split('|')
+    for part in parts:
+        part = part.strip()
+        # Find something looking like a CAS number: digits-digits-digit
+        match = re.search(r'\d+-\d{2}-\d', part)
+        if match:
+            cas = match.group(0)
+            # Remove leading zeros in the first part (e.g. 0140-11-4 -> 140-11-4)
+            cleaned = re.sub(r'^0+', '', cas)
+            return cleaned
+    return ""
+
+def parse_dilution_from_name(name, supplier):
+    # e.g., "Skatole 1% in DPG" or "Galaxolide 50% in DPG"
+    match = re.search(r'(\d+(?:\.\d+)?)\s*%\s*(?:in\s+)?([A-Za-z0-9]+)', name, re.IGNORECASE)
+    if match:
+        pct = float(match.group(1))
+        solv = match.group(2).upper()
+        if solv in SOLVENTS_MAP:
+            active_name = name[:match.start()].strip().rstrip(' ,-—/')
+            return active_name, pct, SOLVENTS_MAP[solv]
+            
+    # e.g., "Cedryl Acetate 50%"
+    match_pct = re.search(r'(\d+(?:\.\d+)?)\s*%', name)
+    if match_pct:
+        pct = float(match_pct.group(1))
+        active_name = name[:match_pct.start()].strip().rstrip(' ,-—/')
+        return active_name, pct, None
+        
+    return None
+
+def parse_quantity_g(size_str):
+    if not size_str:
+        return 1.0
+    size_str = size_str.lower().strip()
+    m_g = re.search(r'([\d.]+)\s*g', size_str)
+    if m_g:
+        return float(m_g.group(1))
+    m_kg = re.search(r'([\d.]+)\s*kg', size_str)
+    if m_kg:
+        return float(m_kg.group(1)) * 1000.0
+    m_ml = re.search(r'([\d.]+)\s*ml', size_str)
+    if m_ml:
+        return float(m_ml.group(1))
+    m_l = re.search(r'([\d.]+)\s*(?:l|liter)', size_str)
+    if m_l:
+        return float(m_l.group(1)) * 1000.0
+    m_oz = re.search(r'([\d.]+)\s*oz', size_str)
+    if m_oz:
+        return float(m_oz.group(1)) * 28.35
+    m_num = re.match(r'([\d.]+)', size_str)
+    if m_num:
+        return float(m_num.group(1))
+    return 1.0
+
+def main():
+    # Load audit fixes from Perfumery_Raw_Materials_Audit_Master.csv
+    fix_map = {}
+    if os.path.exists(AUDIT_CSV):
+        print(f"Loading audit fixes from {AUDIT_CSV}...")
+        with open(AUDIT_CSV, mode='r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                orig_name = row.get('Original_Name')
+                if orig_name:
+                    pc_cas_all = row.get('PubChem_CAS_All', '').split('|')
+                    best_pc_cas = pc_cas_all[0] if pc_cas_all and pc_cas_all[0] else ""
+                    
+                    fix_map[orig_name] = {
+                        "verified_cas": best_pc_cas,
+                        "canonical_title": row.get('PubChem_Title', ''),
+                        "status": row.get('Status', ''),
+                        "synonyms": row.get('PubChem_Synonyms_Top10', '')
+                    }
+    else:
+        print(f"Warning: Audit master {AUDIT_CSV} not found. Continuing without audit fixes.")
+
+    output_rows = []
+
+    # 1. Process PerfumersWorld
+    print(f"Processing PerfumersWorld from {PW_CSV}...")
+    with open(PW_CSV, 'r', encoding='utf-8-sig') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            sku = row['Product_ID'].strip()
+            # Filter SKU according to user request: exactly 8 chars and starts with 1-9
+            if not (len(sku) == 8 and sku[0] in '123456789'):
+                continue
+                
+            raw_name = row['Material_Name'].strip()
+            cas = row.get('CAS_Number', '').strip()
+            
+            # Extract price in USD/g
+            price_usd_str = row.get('Price_US/g', '').strip()
+            try:
+                price_usd = float(price_usd_str) if price_usd_str else ""
+            except ValueError:
+                price_usd = ""
+                
+            # Formatting CAS
+            cleaned_cas = clean_cas_formatting(cas)
+            
+            # Lookup in audit fixes
+            # We match by the exact Material_Name (e.g. '2 3-Dimethyl Pyrazine from PerfumersWorld')
+            fix = fix_map.get(raw_name)
+            
+            canonical_name = ""
+            verified_cas = cleaned_cas
+            remediation_status = "VERIFIED"
+            
+            if fix:
+                canonical_name = fix['canonical_title']
+                if fix['status'] == 'WIP_DISCREPANCY':
+                    verified_cas = clean_cas_formatting(fix['verified_cas']) or cleaned_cas
+                    remediation_status = "FIXED_FROM_AUDIT"
+                elif fix['status'] == 'DATA_GAP':
+                    remediation_status = "DATA_GAP_MANUAL_CHECK"
+                elif fix['status'] == 'NATURAL_MIXTURE':
+                    remediation_status = "NATURAL_MIXTURE"
+                elif fix['status'] == 'WIP_VERIFIED':
+                    remediation_status = "VERIFIED_MATCH"
+            else:
+                # Default logic if not in audit map
+                if any(x in raw_name.lower() for x in [" oil ", " essential", " absolute", " resinoid", " extract"]):
+                    remediation_status = "NATURAL_MIXTURE"
+                elif not cleaned_cas:
+                    remediation_status = "DATA_GAP_MANUAL_CHECK"
+
+            # Check if CAS was modified by formatting
+            if remediation_status == "VERIFIED" and cleaned_cas != cas and re.match(r'^\d+-\d+-\d+$', cleaned_cas):
+                remediation_status = "FORMATTING_FIX"
+
+            # Dilution details
+            is_dil = row.get('Is_Dilution') == 'TRUE'
+            active_pct_val = row.get('Active_%', '').strip()
+            
+            is_dilution_col = ""
+            active_material_col = ""
+            solvent_col = ""
+            active_pct_col = ""
+            
+            if is_dil:
+                try:
+                    pct = float(active_pct_val)
+                    if pct <= 1.0:
+                        pct = pct * 100.0
+                    pct_str = f"{pct:.2f}%"
+                except ValueError:
+                    pct_str = ""
+                is_dilution_col = pct_str
+                active_material_col = row.get('Active_Material', '').strip()
+                solvent_col = row.get('Solvent', '').strip()
+                active_pct_col = pct_str
+                
+                # Make sure Active_Material and Solvent have supplier suffixes if not present
+                if active_material_col and not active_material_col.endswith('from PerfumersWorld'):
+                    active_material_col += ' from PerfumersWorld'
+                if solvent_col and not solvent_col.endswith('from PerfumersWorld'):
+                    solvent_col += ' from PerfumersWorld'
+
+            output_rows.append({
+                'Product_ID': sku,
+                'Material_Name': raw_name,
+                'CAS_Number': cas,
+                'Remediation_Status': remediation_status,
+                'Canonical_Name': canonical_name,
+                'Verified_CAS': verified_cas,
+                'Price_USD/g': f"{price_usd:.4f}" if isinstance(price_usd, float) else "",
+                'Notes': row.get('Notes', '').strip(),
+                'Is_Dilution': is_dilution_col,
+                'Active_Material': active_material_col,
+                'Solvent': solvent_col,
+                'Active_%': active_pct_col
+            })
+
+    # 2. Process MySkinRecipes
+    print(f"Processing MySkinRecipes from {MSR_CSV}...")
+    with open(MSR_CSV, 'r', encoding='utf-8-sig') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            sku = row['Product_ID'].strip()
+            raw_name = row['Material_Name'].strip()
+            # Append from MySkinRecipes suffix if not present
+            material_name = raw_name
+            if not material_name.endswith('from MySkinRecipes'):
+                material_name += ' from MySkinRecipes'
+                
+            cas = row.get('CAS_Number', '').strip()
+            cleaned_cas = clean_cas_formatting(cas)
+            
+            # Calculate Price in USD/g
+            # MySkinRecipes prices are in THB. Convert to USD by dividing by 35.0
+            price_thb_g_str = row.get('Price_THB/g', '').strip()
+            price_thb_total_str = row.get('Price_THB_total', '').strip()
+            pkg_size_str = row.get('Package_Size', '').strip()
+            
+            price_usd = ""
+            try:
+                if price_thb_g_str:
+                    price_usd = float(price_thb_g_str) / EXCHANGE_RATE_USD_THB
+                elif price_thb_total_str and pkg_size_str:
+                    qty_g = parse_quantity_g(pkg_size_str)
+                    price_usd = (float(price_thb_total_str) / qty_g) / EXCHANGE_RATE_USD_THB
+            except Exception:
+                price_usd = ""
+
+            # Lookup in audit fixes
+            # We match by the raw name or the name with suffix
+            fix = fix_map.get(raw_name) or fix_map.get(material_name)
+            
+            canonical_name = ""
+            verified_cas = cleaned_cas
+            remediation_status = "VERIFIED"
+            
+            if fix:
+                canonical_name = fix['canonical_title']
+                if fix['status'] == 'WIP_DISCREPANCY':
+                    verified_cas = clean_cas_formatting(fix['verified_cas']) or cleaned_cas
+                    remediation_status = "FIXED_FROM_AUDIT"
+                elif fix['status'] == 'DATA_GAP':
+                    remediation_status = "DATA_GAP_MANUAL_CHECK"
+                elif fix['status'] == 'NATURAL_MIXTURE':
+                    remediation_status = "NATURAL_MIXTURE"
+                elif fix['status'] == 'WIP_VERIFIED':
+                    remediation_status = "VERIFIED_MATCH"
+            else:
+                # Default logic if not in audit map
+                if any(x in raw_name.lower() for x in [" oil ", " essential", " absolute", " resinoid", " extract"]):
+                    remediation_status = "NATURAL_MIXTURE"
+                elif not cleaned_cas:
+                    remediation_status = "DATA_GAP_MANUAL_CHECK"
+
+            # Check if CAS was modified by formatting
+            if remediation_status == "VERIFIED" and cleaned_cas != cas and re.match(r'^\d+-\d+-\d+$', cleaned_cas):
+                remediation_status = "FORMATTING_FIX"
+
+            # Dilution details from name or columns
+            dilution_info = parse_dilution_from_name(raw_name, 'MySkinRecipes')
+            is_dilution_col = ""
+            active_material_col = ""
+            solvent_col = ""
+            active_pct_col = ""
+            
+            if dilution_info:
+                act_name, pct, solv_name = dilution_info
+                pct_str = f"{pct:.2f}%"
+                is_dilution_col = pct_str
+                active_material_col = act_name + ' from MySkinRecipes'
+                solvent_col = (solv_name + ' from MySkinRecipes') if solv_name else ""
+                active_pct_col = pct_str
+            elif row.get('Is_Dilution') == 'TRUE':
+                # Parse Active_%
+                act_pct_val = row.get('Active_%', '').strip()
+                try:
+                    pct = float(act_pct_val)
+                    if pct <= 1.0:
+                        pct = pct * 100.0
+                    pct_str = f"{pct:.2f}%"
+                except ValueError:
+                    pct_str = ""
+                is_dilution_col = pct_str
+                active_material_col = row.get('Active_Material', '').strip()
+                if active_material_col and not active_material_col.endswith('from MySkinRecipes'):
+                    active_material_col += ' from MySkinRecipes'
+                solvent_col = row.get('Solvent', '').strip()
+                if solvent_col and not solvent_col.endswith('from MySkinRecipes'):
+                    solvent_col += ' from MySkinRecipes'
+                active_pct_col = pct_str
+
+            output_rows.append({
+                'Product_ID': sku,
+                'Material_Name': material_name,
+                'CAS_Number': cas,
+                'Remediation_Status': remediation_status,
+                'Canonical_Name': canonical_name,
+                'Verified_CAS': verified_cas,
+                'Price_USD/g': f"{price_usd:.4f}" if isinstance(price_usd, float) else "",
+                'Notes': row.get('Notes', '').strip(),
+                'Is_Dilution': is_dilution_col,
+                'Active_Material': active_material_col,
+                'Solvent': solvent_col,
+                'Active_%': active_pct_col
+            })
+
+    # 3. Process SimpleScentsDIY
+    print(f"Processing SimpleScentsDIY from {SSD_CSV}...")
+    with open(SSD_CSV, 'r', encoding='utf-8-sig') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            sku = row['Product_ID'].strip()
+            raw_name = row['Material_Name'].strip()
+            # Append from SimpleScentsDIY suffix if not present
+            material_name = raw_name
+            if not material_name.endswith('from SimpleScentsDIY'):
+                material_name += ' from SimpleScentsDIY'
+                
+            cas = row.get('CAS_Number', '').strip()
+            cleaned_cas = clean_cas_formatting(cas)
+            
+            # Calculate Price in USD/g
+            # SimpleScentsDIY prices are in THB. Convert to USD by dividing by 35.0
+            price_thb_g_str = row.get('Price_THB/g', '').strip()
+            price_thb_total_str = row.get('Price_THB_total', '').strip()
+            pkg_size_str = row.get('Package_Size', '').strip()
+            
+            price_usd = ""
+            try:
+                if price_thb_g_str:
+                    price_usd = float(price_thb_g_str) / EXCHANGE_RATE_USD_THB
+                elif price_thb_total_str and pkg_size_str:
+                    qty_g = parse_quantity_g(pkg_size_str)
+                    price_usd = (float(price_thb_total_str) / qty_g) / EXCHANGE_RATE_USD_THB
+            except Exception:
+                price_usd = ""
+
+            # Lookup in audit fixes
+            # We match by the raw name or the name with suffix
+            fix = fix_map.get(raw_name) or fix_map.get(material_name)
+            
+            canonical_name = ""
+            verified_cas = cleaned_cas
+            remediation_status = "VERIFIED"
+            
+            if fix:
+                canonical_name = fix['canonical_title']
+                if fix['status'] == 'WIP_DISCREPANCY':
+                    verified_cas = clean_cas_formatting(fix['verified_cas']) or cleaned_cas
+                    remediation_status = "FIXED_FROM_AUDIT"
+                elif fix['status'] == 'DATA_GAP':
+                    remediation_status = "DATA_GAP_MANUAL_CHECK"
+                elif fix['status'] == 'NATURAL_MIXTURE':
+                    remediation_status = "NATURAL_MIXTURE"
+                elif fix['status'] == 'WIP_VERIFIED':
+                    remediation_status = "VERIFIED_MATCH"
+            else:
+                # Default logic if not in audit map
+                if any(x in raw_name.lower() for x in [" oil ", " essential", " absolute", " resinoid", " extract"]):
+                    remediation_status = "NATURAL_MIXTURE"
+                elif not cleaned_cas:
+                    remediation_status = "DATA_GAP_MANUAL_CHECK"
+
+            # Check if CAS was modified by formatting
+            if remediation_status == "VERIFIED" and cleaned_cas != cas and re.match(r'^\d+-\d+-\d+$', cleaned_cas):
+                remediation_status = "FORMATTING_FIX"
+
+            # Dilution details from name or columns
+            dilution_info = parse_dilution_from_name(raw_name, 'SimpleScentsDIY')
+            is_dilution_col = ""
+            active_material_col = ""
+            solvent_col = ""
+            active_pct_col = ""
+            
+            if dilution_info:
+                act_name, pct, solv_name = dilution_info
+                pct_str = f"{pct:.2f}%"
+                is_dilution_col = pct_str
+                active_material_col = act_name + ' from SimpleScentsDIY'
+                solvent_col = (solv_name + ' from SimpleScentsDIY') if solv_name else ""
+                active_pct_col = pct_str
+            elif row.get('Is_Dilution') == 'TRUE':
+                # Parse Active_%
+                act_pct_val = row.get('Active_%', '').strip()
+                try:
+                    pct = float(act_pct_val)
+                    if pct <= 1.0:
+                        pct = pct * 100.0
+                    pct_str = f"{pct:.2f}%"
+                except ValueError:
+                    pct_str = ""
+                is_dilution_col = pct_str
+                active_material_col = row.get('Active_Material', '').strip()
+                if active_material_col and not active_material_col.endswith('from SimpleScentsDIY'):
+                    active_material_col += ' from SimpleScentsDIY'
+                solvent_col = row.get('Solvent', '').strip()
+                if solvent_col and not solvent_col.endswith('from SimpleScentsDIY'):
+                    solvent_col += ' from SimpleScentsDIY'
+                active_pct_col = pct_str
+
+            output_rows.append({
+                'Product_ID': sku,
+                'Material_Name': material_name,
+                'CAS_Number': cas,
+                'Remediation_Status': remediation_status,
+                'Canonical_Name': canonical_name,
+                'Verified_CAS': verified_cas,
+                'Price_USD/g': f"{price_usd:.4f}" if isinstance(price_usd, float) else "",
+                'Notes': row.get('Notes', '').strip(),
+                'Is_Dilution': is_dilution_col,
+                'Active_Material': active_material_col,
+                'Solvent': solvent_col,
+                'Active_%': active_pct_col
+            })
+
+    # Save to consolidated output CSV
+    fieldnames = [
+        'Product_ID', 'Material_Name', 'CAS_Number', 'Remediation_Status', 
+        'Canonical_Name', 'Verified_CAS', 'Price_USD/g', 'Notes', 
+        'Is_Dilution', 'Active_Material', 'Solvent', 'Active_%'
+    ]
+    
+    print(f"Saving {len(output_rows)} rows to {OUTPUT_CSV}...")
+    with open(OUTPUT_CSV, mode='w', encoding='utf-8', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(output_rows)
+        
+    print("Done! Consolidation complete.")
+
+if __name__ == '__main__':
+    main()
