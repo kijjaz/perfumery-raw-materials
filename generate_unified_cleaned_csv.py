@@ -233,6 +233,10 @@ def determine_remediation_status(raw_name, cas, cleaned_cas, fix):
             remediation_status = "DATA_GAP_MANUAL_CHECK"
         elif fix['status'] == 'NATURAL_MIXTURE':
             remediation_status = "NATURAL_MIXTURE"
+        elif fix['status'] == 'PROPRIETARY_MIXTURE':
+            remediation_status = "PROPRIETARY_MIXTURE"
+        elif fix['status'] == 'SUPPLIER_MISMATCH':
+            remediation_status = "SUPPLIER_MISMATCH"
         elif fix['status'] == 'WIP_VERIFIED':
             remediation_status = "VERIFIED_MATCH"
     else:
@@ -306,7 +310,7 @@ def main():
     fix_map = {}
     if os.path.exists(AUDIT_CSV):
         print(f"Loading audit fixes from {AUDIT_CSV}...")
-        with open(AUDIT_CSV, mode='r', encoding='utf-8') as f:
+        with open(AUDIT_CSV, mode='r', encoding='utf-8-sig') as f:
             reader = csv.DictReader(f)
             for row in reader:
                 orig_name = row.get('Original_Name')
